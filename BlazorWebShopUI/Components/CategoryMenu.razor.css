@@ -1,0 +1,33 @@
+﻿.sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    background: #3B3B3B;
+    border: 2px solid #8a2be2;
+    border-radius: 0px 0px 22px 0px;
+    height: fit-content;
+}
+
+.category-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border: 1px solid #000000;
+    border-radius: 0px 22px 22px 0px;
+    padding: 0.5rem;
+    background: #777777;
+    color: white;
+}
+
+.arrow-icon {
+    float: right;
+    width: 16px;
+    height: 28px;
+    margin-right: 10px;
+}
+
+.category-btn:hover {
+    background: #8a2be2;
+    cursor: pointer;
+}

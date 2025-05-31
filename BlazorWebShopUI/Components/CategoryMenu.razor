@@ -1,0 +1,29 @@
+﻿
+<div class="sidebar">
+	<h4>Kategorie</h4>
+	@foreach(var category in Categories)
+	{
+		<button class="category-btn">@category <img src="@ImageUrl" alt="arrow right" class="arrow-icon" /></button>
+		
+	}
+</div>
+ 
+
+@code {
+	private List<string> Categories = new List<string>
+	{
+		"Komputery", 
+		"Laptopy", 
+		"Podzespoły komputerowe", 
+		"Monitory", 
+		"Telewizory", 
+		"Smartfony",
+		"Smartwatche", 
+		"Tablety", 
+		"Audio", 
+		"Akcesoria"
+	};
+
+	public string ImageUrl = "Images/SvgIcons/right-arrow.svg";
+
+}

@@ -1,0 +1,18 @@
+﻿
+<div class="topnav">
+	<img class="logo-icon" src="@LogoImageUrl" alt="logo" />
+	<input class="search-bar" placeholder="Wyszukaj" />
+	<div class="icons">
+		<button> <img class="top-nav-icon" src="@AccountImageUrl" alt="account icon" /> Konto</button>
+		<button> <img class="top-nav-icon" src="@CartImageUrl" alt="account icon" /> Koszyk</button>
+		<button> <img class="top-nav-icon" src="@ContactImageUrl" alt="account icon" /> Kontakt</button>
+	</div>
+</div>
+
+@code{
+	public String LogoImageUrl { get; set; } = "Images/logo.png";
+	public String AccountImageUrl { get; set; } = "Images/SvgIcons/account-icon.svg";
+	public String CartImageUrl { get; set; } = "Images/SvgIcons/cart-icon.svg";
+	public String ContactImageUrl { get; set; } = "Images/SvgIcons/contact-icon.svg";
+}
+

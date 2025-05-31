@@ -1,0 +1,51 @@
+﻿.topnav {
+    width: 100%;
+    box-sizing: border-box;
+    background: #c2c2c2;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-icon {
+    width: 220px;
+    height: 130px;
+}
+
+.search-bar {
+    width: 100%;
+    border: 1px solid #989898;
+    border-radius: 2px;
+    max-width: 600px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+    .icons button {
+        border: none;
+        background: none;
+        color: black;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .icons button:hover {
+        cursor: pointer;
+        color: #8a2be2;
+    }
+
+.top-nav-icon {
+    width: 60px;
+    height: 60px;
+}
+
+
