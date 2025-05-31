@@ -23,7 +23,7 @@
         try
         {
             var fetchedProducts = await Http.GetFromJsonAsync<List<ProductCard>>(
-                $"sample-data/ProductCardInfo.json?nocache={Guid.NewGuid()}"
+                $"data/ProductCardInfo.json?nocache={Guid.NewGuid()}"
             );
 
             if (fetchedProducts != null)

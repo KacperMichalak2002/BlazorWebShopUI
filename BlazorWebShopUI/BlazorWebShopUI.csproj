@@ -13,7 +13,7 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\Images\SvgIcons\" />
-    <Folder Include="wwwroot\sample-data\" />
+    <Folder Include="wwwroot\data\" />
   </ItemGroup>
 
 </Project>
