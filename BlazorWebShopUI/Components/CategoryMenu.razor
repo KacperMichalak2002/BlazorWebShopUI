@@ -3,7 +3,27 @@
 	<h4>Kategorie</h4>
 	@foreach(var category in Categories)
 	{
-		<button class="category-btn">@category <img src="@ImageUrl" alt="arrow right" class="arrow-icon" /></button>
+		<div class="category-container">
+			<button class="category-btn @(ActiveCategory == category ? "active" :"")"
+					@onclick="() => ToggleCategory(category)">
+				@category <img src="@ImageUrl" alt="arrow right" class="arrow-icon" />
+			</button>
+
+			<div class="rollout-panel @(ActiveCategory == category ? "expanded" : "")">
+				@foreach(var group in GetSubcategoryGroups(category))
+				{
+					<div class="subcategory-group">
+						<h5>@group.Key</h5>
+						<ul>
+							@foreach(var item in group.Value)
+							{
+								<li @onclick="() => SelectSubCategroy(item)">@item</li>
+							}
+						</ul>
+					</div>
+				}
+			</div>
+		</div>
 		
 	}
 </div>
@@ -25,5 +45,79 @@
 	};
 
 	public string ImageUrl = "Images/SvgIcons/right-arrow.svg";
+
+	private string ActiveCategory = string.Empty;
+
+	private void ToggleCategory(string category)
+	{
+		ActiveCategory = ActiveCategory == category ? string.Empty : category;
+	}
+
+	private void SelectSubCategroy(string subcategory)
+	{
+		Console.WriteLine($"Selected subcategory: {subcategory}");
+	}
+
+	private Dictionary<string, List<string>> GetSubcategoryGroups(string category)
+	{
+		return category switch
+		{
+			"Komputery"=> new()
+			{
+				{"Typy", new() {"Komputery stacjonarne", "Mini PC"} },
+				{"Zastosowania", new() {"Do gier", "Do pracy biurowej", "Do grafiki i projektowania"} }
+			},
+			"Laptopy" => new()
+			{
+				{"Typy", new() {"Laptopy gamingowe", "Laptopy biznesowe", "Laptopy ultrabooki"} },
+				{"Zastosowania", new() {"Do gier", "Do pracy biurowej", "Do grafiki i projektowania"} }
+			},
+			"Podzespoły komputerowe" => new()
+			{
+				{"Procesory", new() {"Intel", "AMD"} },
+				{"Karty graficzne", new() {"NVIDIA", "AMD"} },
+				{"Pamięć RAM", new() {"DDR4", "DDR5"} },
+				{"Dyski twarde", new() {"HDD", "SSD"} },
+				{"Płyty główne", new() {"ATX", "Micro ATX", "Mini ITX"} },
+				{"Zasilacze", new() {"500W", "750W", "1000W"} }
+
+			},
+			"Monitory" => new()
+			{
+				{"Typy", new() {"Monitory LED", "Monitory OLED"} },
+				{"Rozmiary", new() {"24 cale", "27 cali", "32 cale"} }
+			},
+			"Telewizory" => new()
+			{
+				{"Typy", new() {"Telewizory LED", "Telewizory OLED", "Telewizory QLED"} },
+				{"Rozmiary", new() {"43 cale", "55 cali", "65 cali"} }
+			},
+			"Smartfony" => new()
+			{
+				{"Marki", new() {"Apple", "Samsung", "Xiaomi", "OnePlus"} },
+				{"Zastosowania", new() {"Do gier", "Do fotografii", "Do codziennego użytku"} }
+			},
+			"Smartwatche" => new()
+			{
+				{"Marki", new() {"Apple", "Samsung", "Garmin", "Fitbit"} },
+				{"Zastosowania", new() {"Fitness", "Monitorowanie zdrowia", "Codzienne użytki"} }
+			},
+			"Tablety" => new()
+			{
+				{"Marki", new() {"Apple", "Samsung", "Microsoft", "Lenovo"} },
+				{"Zastosowania", new() {"Do pracy", "Do rozrywki", "Do rysowania"} }
+			},
+			"Audio" => new()
+			{
+				{"Typy", new() {"Słuchawki", "Głośniki", "Soundbary"} },
+				{"Marki", new() {"Sony", "Bose", "JBL", "Apple"} }
+			},
+			"Akcesoria" => new()
+			{
+				{"Typy", new() {"Klawiatury", "Myszki", "Podkładki pod mysz", "Kable i przejściówki"} },
+				{"Marki", new() {"Logitech", "Razer", "Corsair", "SteelSeries"} }
+			}
+		};
+	}
 
 }

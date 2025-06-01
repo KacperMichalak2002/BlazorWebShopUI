@@ -1,11 +1,10 @@
-/* Base body styling */
+
 body {
     background-color: #3B3B3B;
     color: white;
     font-family: sans-serif;
 }
 
-/* Layout styling */
 .layout {
     display: flex;
 }
@@ -15,7 +14,6 @@ body {
     padding: 1rem;
 }
 
-/* Product grid layout */
 .product-grid {
     margin-left: 50px;
     display: flex;
