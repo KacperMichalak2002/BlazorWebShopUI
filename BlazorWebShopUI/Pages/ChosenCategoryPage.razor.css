@@ -1,0 +1,7 @@
+﻿.page-container {
+    display: flex;
+}
+
+.side-menu{
+    align-items: center;
+}

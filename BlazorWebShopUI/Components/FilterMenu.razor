@@ -1,0 +1,93 @@
+﻿@inject HttpClient Http
+
+<div class="sidebar">
+    <h2>@subcategory</h2>
+    <h4>Filtry</h4>
+    @if (filters.Count == 0)
+    {
+        <p>No filters found</p>
+    }
+    else
+    {
+        <div class="filters-bar">
+            @foreach(var filter in filters)
+            {
+                @foreach(var filterName in filter.FiltersToCreate.Keys)
+                {
+                    <div class="filter-card">
+                        <h4>@filterName</h4>
+                        @foreach(var filterValue in filter.FiltersToCreate[filterName])
+                        {
+                            <div class="filter-item">
+                                <input type="checkbox" id="@filterValue" name="@filterValue" value="@filterValue"
+                                       @onchange="(e) => ApplyFilters(filterName, filterValue, (bool)e.Value)"/>
+                                <label for="@filterValue">@filterValue</label>
+                            </div>
+                        }
+                    </div>
+				}  
+            }
+        </div>
+    }
+</div>
+
+@code {
+    [Parameter] public string subcategory { get; set; } = string.Empty;
+    [Parameter] public string MainCategory { get; set; } = string.Empty;
+    [Parameter] public EventCallback<Dictionary<string, List<string>>> FiltersChanged { get; set; }
+
+    private List<Filters> filters = new List<Filters>();
+
+    private Dictionary<String, List<string>> selectedFilters = new Dictionary<string, List<string>>();
+
+    private async Task ApplyFilters(string filterName, string filterValue, bool isChecked)
+    {
+        if (!selectedFilters.ContainsKey(filterName))
+        {
+            selectedFilters[filterName] = new List<string>();
+        }
+        if (isChecked)
+        {
+            selectedFilters[filterName].Add(filterValue);
+        }
+        else
+        {
+            selectedFilters[filterName].Remove(filterValue);
+            if (selectedFilters[filterName].Count == 0)
+            {
+                selectedFilters.Remove(filterName);
+            }
+        }
+        Console.WriteLine($"Current filters: {System.Text.Json.JsonSerializer.Serialize(selectedFilters)}");
+		await FiltersChanged.InvokeAsync(selectedFilters);
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        filters.Clear();
+        try
+        {
+            var fetchedFilters = await Http.GetFromJsonAsync<List<Filters>>(
+                $"data/FiltersInfo.json?nocahce={Guid.NewGuid()}"
+            );
+
+            if(fetchedFilters != null)
+            {
+                foreach(var filter in fetchedFilters)
+                {
+                    if(filter.Categories.Any(c => c.Equals(MainCategory, StringComparison.OrdinalIgnoreCase)))
+                    {
+						filters.Add(filter);
+                    }
+
+                }
+			}
+
+
+
+        }catch (Exception e)
+        {
+            Console.WriteLine($"Error fetching filters: {e.Message}");
+		}
+    }
+}

@@ -3,7 +3,8 @@
     "title": "OMEN by HP",
     "category": [
       "Monitory",
-      "Monitory LED"
+      "Monitory LED",
+      "24 cale"
     ],
     "description": [
       "Rozmiar: 23.8 cale",
@@ -11,8 +12,36 @@
       "Matryca: IPS",
       "Porty: HDMI, DisplayPort, USB-C"
     ],
+    "specification": {
+      "Przekatna": "24",
+      "Producent": "HP",
+      "Rodzaj matrycy": "IPS",
+      "Czestotliwosc odswiezania": "165Hz"
+    },
     "price": 599.00,
     "imageUrl": "Images/omen_23_8.png"
+  },
+  {
+    "title": "iiyama G-Master G2745HSU-B2 Black Hawk",
+    "category": [
+      "Monitory",
+      "Monitory LED",
+      "27 cale"
+    ],
+    "description": [
+      "Rozmiar: 27 cale",
+      "Częstotliwość odświeżania: 100Hz",
+      "Matryca: IPS",
+      "Porty: HDMI, DisplayPort, USB-C"
+    ],
+    "specification": {
+      "Przekatna": "27",
+      "Producent": "iiyama",
+      "Rodzaj matrycy": "IPS",
+      "Czestotliwosc odswiezania": "100Hz"
+    },
+    "price": 499.00,
+    "imageUrl": "Images/iiyama_G-Master_G2745HSU-B2.png"
   },
   {
     "title": "Intel Core i9-12900K",
@@ -26,6 +55,13 @@
       "Liczba rdzeni: 16",
       "Taktowanie rdzenia: 5.2 GHz"
     ],
+    "specification": {
+      "Gniazdo procesora": "Socket 1700",
+      "Taktowanie": "3.2 GHz",
+      "Typ": "Procesor",
+      "Liczba rdzeni": "16",
+      "Producent": "Intel"
+    },
     "price": 1419.00,
     "imageUrl": "Images/intel_i9_12900k.png"
   },
@@ -36,6 +72,12 @@
       "Google",
       "Do codziennego użytku"
     ],
+    "specification": {
+      "Producent": "Google",
+      "Przekatna": "6.3",
+      "Pamiec wewnetrzna": "256GB",
+      "System operacyjny": "Android"
+    },
     "description": [
       "Ekran: 6,3",
       "Procesor: Google Tensor G4",

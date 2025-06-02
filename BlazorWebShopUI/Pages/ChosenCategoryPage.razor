@@ -1,38 +1,104 @@
-﻿@page "/category/{Subcategory}"
+﻿@page "/category/{MainCategory}/{Subcategory}"
 @inject HttpClient Http
 @inject NavigationManager Navigation
 @using Microsoft.AspNetCore.Components
 
-<h2>@Subcategory</h2>
+<PageTitle>Debug</PageTitle>
 
-@if(Products.Count == 0)
-{
-    <p>No products found in this category.</p>
-}
-else
-{
-    <div class="product-grid">
-        @foreach (var product in Products)
+<div class="page-container">
+    <div class="side-menu">
+		<FilterMenu Subcategory="@Subcategory"
+                    MainCategory="@MainCategory"
+                    FiltersChanged="HandleFiltersChanged"/>
+    </div>
+    <div class="page-content">
+        @if (filteredProducts.Count == 0)
         {
-            <ProductCard Product="@product" />
+            <p>No products found in this category.</p>
+        }
+        else
+        {
+            <div class="product-grid">
+                @foreach (var product in filteredProducts)
+                {
+                    <ProductCard Product="@product" />
+                }
+            </div>
         }
     </div>
-}
+</div>
+
 
 @code {
     [Parameter]
     public string Subcategory { get; set; } = string.Empty;
+    [Parameter]
+    public string MainCategory { get; set; } = string.Empty;
 
     protected override void OnInitialized()
     {
         Console.WriteLine($"Selected subcategory: {Subcategory}");
+        Console.WriteLine($"Selected main category: {MainCategory}");
     }
 
-    private List<ProductCardInfo> Products = new List<ProductCardInfo>();
+    private List<ProductCardInfo> allProducts = new List<ProductCardInfo>();
+    private List<ProductCardInfo> filteredProducts = new List<ProductCardInfo>();
+    private Dictionary<String, List<string>> currentFilters = new Dictionary<string, List<string>>();
+
+    private async Task HandleFiltersChanged(Dictionary<string, List<string>> filters)
+    {
+        currentFilters = filters;
+        await ApplyFilters();
+    }
+
+    private async Task ApplyFilters()
+    {
+        var categoryFilteredProducts = allProducts
+                .Where(prod => prod.Category.Any(c => c.Equals(Subcategory, StringComparison.OrdinalIgnoreCase)))
+                .ToList();
+
+        if(currentFilters.Count == 0)
+        {
+            filteredProducts = categoryFilteredProducts;
+        }
+        else
+        {
+            filteredProducts = categoryFilteredProducts.Where(prod =>
+            {
+                foreach(var filter in currentFilters)
+                {
+                    string filterName = filter.Key;
+                    List<string> selectedValues = filter.Value;
+
+                    if (prod.Specification != null && prod.Specification.ContainsKey(filterName))
+                    {
+                        string productValue = prod.Specification[filterName];
+
+                        bool matchesFilter = selectedValues.Any(selectedValue =>
+                        productValue.Equals(selectedValue, StringComparison.OrdinalIgnoreCase) ||
+                        productValue.Contains(selectedValue, StringComparison.OrdinalIgnoreCase));
+
+                        if (!matchesFilter)
+                        {
+                            return false;
+                        }
+
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+				return true;
+            }).ToList();
+        }
+        StateHasChanged();
+    }
+    
 
     protected override async Task OnParametersSetAsync()
     {
-		Products.Clear();
+        allProducts.Clear();
         try
         {
             Console.WriteLine("Fetching products from JSON file...");
@@ -42,15 +108,8 @@ else
 
             if (fetchedProducts != null)
             {
-                foreach(var product in fetchedProducts)
-                {
-
-                    if(product.Category.Any(c => c.Equals(Subcategory, StringComparison.OrdinalIgnoreCase)))
-                    {
-                        Products.Add(product);
-                    }
-                }
-
+                allProducts = fetchedProducts;
+				await ApplyFilters();
             }
             
         }

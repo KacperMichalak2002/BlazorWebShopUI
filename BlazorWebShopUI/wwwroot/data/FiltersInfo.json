@@ -1,0 +1,87 @@
+[
+  {
+    "Categories": [ "Monitory" ],
+    "FiltersToCreate": {
+      "Producent": [ "HP", "Dell", "LG", "Samsung" ],
+      "Przekatna": [ "21.5", "23", "24", "27", "32" ],
+      "Rodzaj matrycy": [ "IPS", "VA", "TN" ],
+      "Czestotliwosc odswiezania": [ "60Hz", "75Hz", "144Hz", "165Hz" ]
+    }
+  },
+  {
+    "Categories": [ "Komputery" ],
+    "FiltersToCreate": {
+      "Producent": [ "HP", "Dell", "Lenovo", "Acer" ],
+      "Procesor": [ "Intel Core i3", "Intel Core i5", "Intel Core i7", "AMD Ryzen 5", "AMD Ryzen 7" ],
+      "Pamiec RAM": [ "4GB", "8GB", "16GB", "32GB" ]
+    }
+  },
+  {
+    "Categories": [ "Laptopy" ],
+    "FiltersToCreate": {
+      "Producent": [ "HP", "Dell", "Lenovo", "Acer", "Asus" ],
+      "Przekatna ekranu": [ "<13.3\"", "13.3\"-15.6\"", ">15.6\"" ],
+      "Pamiec RAM": [ "4GB", "8GB", "16GB", "32GB" ],
+      "Pamiec wewnetrzna": [ "256GB SSD", "512GB SSD", "1TB SSD" ]
+    }
+  },
+  {
+    "Categories": [ "Podzespoły komputerowe" ],
+    "FiltersToCreate": {
+      "Producent": [ "Intel", "AMD", "NVIDIA" ],
+      "Typ": [ "Procesor", "Karta graficzna", "Pamięć RAM", "Dysk SSD", "Dysk HDD" ],
+      "Pojemnosc": [ "<256GB", "256GB-512GB", ">512GB" ]
+    }
+  },
+  {
+    "Categories": [ "Telewizory" ],
+    "FiltersToCreate": {
+      "Producent": [ "Samsung", "LG", "Sony", "Philips" ],
+      "Przekatna ekranu": [ "<43\"", "43\"-55\"", ">55\"" ],
+      "Rodzaj matrycy": [ "LED", "OLED", "QLED" ],
+      "Rozdzielczosc": [ "Full HD", "4K", "8K" ]
+    }
+  },
+  {
+    "Categories": [ "Smartfony" ],
+    "FiltersToCreate": {
+      "Producent": [ "Apple", "Samsung", "Xiaomi", "Huawei" ],
+      "Przekatna ekranu": [ "<5.0\"", "5.0\"-6.0\"", ">6.0\"" ],
+      "Pamiec wewnetrzna": [ "64GB", "128GB", "256GB" ],
+      "System operacyjny": [ "Android", "iOS" ]
+    }
+  },
+  {
+    "Categories": [ "Tablety" ],
+    "FiltersToCreate": {
+      "Producent": [ "Apple", "Samsung", "Huawei", "Lenovo" ],
+      "Przekatna ekranu": [ "<8\"", "8\"-10\"", ">10\"" ],
+      "Pamiec wewnetrzna": [ "32GB", "64GB", "128GB", "256GB" ],
+      "System operacyjny": [ "Android", "iOS", "Windows" ]
+    }
+  },
+  {
+    "Categories": [ "Smartwatche" ],
+    "FiltersToCreate": {
+      "Producent": [ "Apple", "Samsung", "Garmin", "Fitbit" ],
+      "Przekatna ekranu": [ "<1.2\"", "1.2\"-1.5\"", ">1.5\"" ],
+      "System operacyjny": [ "Wear OS", "watchOS", "Tizen" ]
+    }
+  },
+  {
+    "Categories": [ "Audio" ],
+    "FiltersToCreate": {
+      "Typ": [ "Słuchawki", "Głośniki", "Soundbar" ],
+      "Producent": [ "Sony", "Bose", "JBL", "Apple" ],
+      "Kompatybilność": [ "Bluetooth", "Wi-Fi", "Kabel" ]
+    }
+  },
+  {
+    "Categories": [ "Akcesoria" ],
+    "FiltersToCreate": {
+      "Typ": [ "Słuchawki", "Klawiatura", "Mysz", "Głośniki", "Kable" ],
+      "Producent": [ "Logitech", "Razer", "Corsair", "SteelSeries" ],
+      "Kompatybilność": [ "PC", "Mac", "Konsole" ]
+    }
+  }
+]

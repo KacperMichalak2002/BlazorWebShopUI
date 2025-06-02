@@ -18,7 +18,7 @@
 						<ul>
 							@foreach(var item in group.Value)
 							{
-								<li @onclick="() => SelectSubCategory(item)">@item</li>
+								<li @onclick="() => SelectSubCategory(category,item)">@item</li>
 							}
 						</ul>
 					</div>
@@ -54,10 +54,10 @@
 		ActiveCategory = ActiveCategory == category ? string.Empty : category;
 	}
 
-	private void SelectSubCategory(string subcategory)
+	private void SelectSubCategory( string mainCategory,string subcategory)
 	{
 		ActiveCategory = string.Empty;
-		Navigation.NavigateTo($"/category/{subcategory}");
+		Navigation.NavigateTo($"/category/{mainCategory}/{subcategory}");
 	}
 
 	private Dictionary<string, List<string>> GetSubcategoryGroups(string category)

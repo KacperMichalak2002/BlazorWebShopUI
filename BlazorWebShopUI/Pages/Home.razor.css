@@ -3,8 +3,10 @@
 }
 .page-content {
     flex-grow: 1;
-    margin-left: 50px;
 }
+    .page-content h2 {
+        margin-left: 20px;
+    }
 
 
 
