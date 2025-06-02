@@ -1,0 +1,22 @@
+﻿@page "/login"
+@inject NavigationManager Navigation
+
+<div class="page-container">
+	<div class="login-panel">
+		<h3>Zaloguje się</h3>
+		<input type="text" placeholder="Email" class="text-input" />
+		<input type="password" placeholder="Hasło" class="text-input" />
+		<button class="login-btn">Zaloguj</button>
+		<p>Nie pamiętasz hasła? <a @onclick="() => NavigateToRegister()" class="register-link">Zarejestruj się</a></p>
+
+	</div>
+</div>
+
+@code {
+
+	private void NavigateToRegister()
+	{
+		Navigation.NavigateTo("/register");
+	}
+
+}

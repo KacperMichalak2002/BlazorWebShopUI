@@ -5,7 +5,7 @@
 	<img class="logo-icon" src="@LogoImageUrl" alt="logo" @onclick="() => NavigateToHome()" />
 	<input class="search-bar" placeholder="Wyszukaj" />
 	<div class="icons">
-		<button> <img class="top-nav-icon" src="@AccountImageUrl" alt="account icon" /> Konto</button>
+		<button @onclick="() => NavigateToLogin()"> <img class="top-nav-icon" src="@AccountImageUrl" alt="account icon" /> Konto</button>
 		<button> <img class="top-nav-icon" src="@CartImageUrl" alt="account icon" /> Koszyk</button>
 		<button> <img class="top-nav-icon" src="@ContactImageUrl" alt="account icon" /> Kontakt</button>
 	</div>
@@ -20,6 +20,11 @@
 	private void NavigateToHome()
 	{
 		Navigation.NavigateTo("/");
+	}
+
+	private void NavigateToLogin()
+	{
+		Navigation.NavigateTo("/login");
 	}
 }
 
