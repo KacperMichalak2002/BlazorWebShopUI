@@ -1,0 +1,63 @@
+﻿@page "/category/{Subcategory}"
+@inject HttpClient Http
+@inject NavigationManager Navigation
+@using Microsoft.AspNetCore.Components
+
+<h2>@Subcategory</h2>
+
+@if(Products.Count == 0)
+{
+    <p>No products found in this category.</p>
+}
+else
+{
+    <div class="product-grid">
+        @foreach (var product in Products)
+        {
+            <ProductCard Product="@product" />
+        }
+    </div>
+}
+
+@code {
+    [Parameter]
+    public string Subcategory { get; set; } = string.Empty;
+
+    protected override void OnInitialized()
+    {
+        Console.WriteLine($"Selected subcategory: {Subcategory}");
+    }
+
+    private List<ProductCardInfo> Products = new List<ProductCardInfo>();
+
+    protected override async Task OnParametersSetAsync()
+    {
+		Products.Clear();
+        try
+        {
+            Console.WriteLine("Fetching products from JSON file...");
+            var fetchedProducts = await Http.GetFromJsonAsync<List<ProductCardInfo>>(
+                $"data/ProductCardInfo.json?nocache={Guid.NewGuid()}"
+            );
+
+            if (fetchedProducts != null)
+            {
+                foreach(var product in fetchedProducts)
+                {
+
+                    if(product.Category.Any(c => c.Equals(Subcategory, StringComparison.OrdinalIgnoreCase)))
+                    {
+                        Products.Add(product);
+                    }
+                }
+
+            }
+            
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine($"Error fetching products: {e.Message}");
+        }
+    }
+
+}

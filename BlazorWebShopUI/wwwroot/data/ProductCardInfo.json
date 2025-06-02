@@ -1,6 +1,10 @@
 [
   {
     "title": "OMEN by HP",
+    "category": [
+      "Monitory",
+      "Monitory LED"
+    ],
     "description": [
       "Rozmiar: 23.8 cale",
       "Częstotliwość odświeżania: 165Hz",
@@ -12,6 +16,10 @@
   },
   {
     "title": "Intel Core i9-12900K",
+    "category": [
+      "Procesory",
+      "Intel"
+    ],
     "description": [
       "Gniazdo procesora: Socket 1700",
       "Taktowanie 3.2 GHz",
@@ -23,6 +31,11 @@
   },
   {
     "title": "Google Pixel 9 Pro 5G 16/256GB Czarny",
+    "category": [
+      "Smartfony",
+      "Google",
+      "Do codziennego użytku"
+    ],
     "description": [
       "Ekran: 6,3",
       "Procesor: Google Tensor G4",
@@ -31,27 +44,5 @@
     ],
     "price": 4099.00,
     "imageUrl": "Images/google_pixel_9_pro_16_265GB.png"
-  },
-  {
-    "title": "Intel Core i9-12900K",
-    "description": [
-      "Gniazdo procesora: Socket 1700",
-      "Taktowanie 3.2 GHz",
-      "Liczba rdzeni: 16",
-      "Taktowanie rdzenia: 5.2 GHz"
-    ],
-    "price": 1419.00,
-    "imageUrl": "Images/intel_i9_12900k.png"
-  },
-  {
-    "title": "Intel Core i9-12900K",
-    "description": [
-      "Gniazdo procesora: Socket 1700",
-      "Taktowanie 3.2 GHz",
-      "Liczba rdzeni: 16",
-      "Taktowanie rdzenia: 5.2 GHz"
-    ],
-    "price": 1419.00,
-    "imageUrl": "Images/intel_i9_12900k.png"
   }
 ]

@@ -1,4 +1,5 @@
-﻿
+﻿@inject NavigationManager Navigation
+
 <div class="sidebar">
 	<h4>Kategorie</h4>
 	@foreach(var category in Categories)
@@ -17,7 +18,7 @@
 						<ul>
 							@foreach(var item in group.Value)
 							{
-								<li @onclick="() => SelectSubCategroy(item)">@item</li>
+								<li @onclick="() => SelectSubCategory(item)">@item</li>
 							}
 						</ul>
 					</div>
@@ -53,9 +54,10 @@
 		ActiveCategory = ActiveCategory == category ? string.Empty : category;
 	}
 
-	private void SelectSubCategroy(string subcategory)
+	private void SelectSubCategory(string subcategory)
 	{
-		Console.WriteLine($"Selected subcategory: {subcategory}");
+		ActiveCategory = string.Empty;
+		Navigation.NavigateTo($"/category/{subcategory}");
 	}
 
 	private Dictionary<string, List<string>> GetSubcategoryGroups(string category)

@@ -1,26 +1,19 @@
-﻿
-<div class="product-card">
-	<img src="@ImageUrl"alt="@Title"/>
-	<div class="product-card-info">
-		<h3>@Title</h3>
-		@if(Description != null)
-		{
-			@for(int i = 0; i < 4; i++)
-			{
-				if(i < Description.Count)
-				{
-					<p class="description">@Description[i]</p>
-				}
-			}
-		}
-		<p class="price">@Price.ToString() zł</p>
-	</div>
+﻿<div class="product-card">
+    <img src="@Product.ImageUrl" alt="@Product.Title"/>
+    <div class="product-card-info">
+        <h3>@Product.Title</h3>
+        @if (Product.Description != null)
+        {
+            @foreach (var desc in Product.Description.Take(4))
+            {
+                <p class="description">@desc</p>
+            }
+        }
+        <p class="price">@Product.Price.ToString("0.00") zł</p>
+    </div>
 </div>
 
-
 @code {
-	[Parameter] public string ImageUrl { get; set; } = string.Empty;
-	[Parameter] public string Title { get; set; } = string.Empty;
-	[Parameter] public List<String> Description { get; set; } = new List<string>();
-	[Parameter] public decimal Price { get; set; } = 0.0m;
+    [Parameter] 
+    public ProductCardInfo Product { get; set; } = new ProductCardInfo();
 }

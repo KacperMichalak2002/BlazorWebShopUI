@@ -1,6 +1,8 @@
-﻿
+﻿@inject NavigationManager Navigation;
+
+
 <div class="topnav">
-	<img class="logo-icon" src="@LogoImageUrl" alt="logo" />
+	<img class="logo-icon" src="@LogoImageUrl" alt="logo" @onclick="() => NavigateToHome()" />
 	<input class="search-bar" placeholder="Wyszukaj" />
 	<div class="icons">
 		<button> <img class="top-nav-icon" src="@AccountImageUrl" alt="account icon" /> Konto</button>
@@ -14,5 +16,10 @@
 	public String AccountImageUrl { get; set; } = "Images/SvgIcons/account-icon.svg";
 	public String CartImageUrl { get; set; } = "Images/SvgIcons/cart-icon.svg";
 	public String ContactImageUrl { get; set; } = "Images/SvgIcons/contact-icon.svg";
+
+	private void NavigateToHome()
+	{
+		Navigation.NavigateTo("/");
+	}
 }
 

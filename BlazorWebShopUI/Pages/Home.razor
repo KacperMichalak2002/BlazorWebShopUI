@@ -1,33 +1,32 @@
 ﻿@page "/"
 @inject HttpClient Http
-@using BlazorWebShop.Models
+@inject NavigationManager Navigation
 
 <PageTitle>Debug</PageTitle>
-
+<CategoryMenu />
 <h2>Polecane produkty</h2>
 <div class="product-grid">
     @foreach (var product in Products)
     {
-        <ProductCard Title="@product.Title"
-                     Description="@product.Description"
-                     Price="@product.Price"
-                     ImageUrl="@product.ImageUrl" />
+        <ProductCard Product="@product"/>
     }
 </div>
 
 @code {
-    private List<ProductCard> Products = new List<ProductCard>();
+    private List<ProductCardInfo> Products = new List<ProductCardInfo>();
 
     protected override async Task OnInitializedAsync()
     {
         try
         {
-            var fetchedProducts = await Http.GetFromJsonAsync<List<ProductCard>>(
+			Console.WriteLine("Fetching products from JSON file...");
+            var fetchedProducts = await Http.GetFromJsonAsync<List<ProductCardInfo>>(
                 $"data/ProductCardInfo.json?nocache={Guid.NewGuid()}"
             );
 
             if (fetchedProducts != null)
             {
+				Console.WriteLine($"Fetched {fetchedProducts.Count} products.");
                 Products = fetchedProducts;
             }
         }

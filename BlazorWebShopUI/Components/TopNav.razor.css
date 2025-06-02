@@ -12,6 +12,9 @@
     width: 220px;
     height: 130px;
 }
+    .logo-icon:hover {
+        cursor: pointer;
+    }
 
 .search-bar {
     width: 100%;
