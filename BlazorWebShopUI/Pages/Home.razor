@@ -3,14 +3,23 @@
 @inject NavigationManager Navigation
 
 <PageTitle>Debug</PageTitle>
-<CategoryMenu />
-<h2>Polecane produkty</h2>
-<div class="product-grid">
-    @foreach (var product in Products)
-    {
-        <ProductCard Product="@product"/>
-    }
+
+<div class="page-container">
+    <div class="side-menu">
+        <CategoryMenu />
+    </div>
+    <div class="page-content">
+        <h2>Polecane produkty</h2>
+        <div class="product-grid">
+            @foreach (var product in Products)
+            {
+                <ProductCard Product="@product" />
+            }
+        </div>
+    </div>
+    
 </div>
+
 
 @code {
     private List<ProductCardInfo> Products = new List<ProductCardInfo>();

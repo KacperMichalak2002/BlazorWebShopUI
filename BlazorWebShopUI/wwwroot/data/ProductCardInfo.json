@@ -45,4 +45,21 @@
     "price": 4099.00,
     "imageUrl": "Images/google_pixel_9_pro_16_265GB.png"
   }
+  ,
+  {
+    "title": "Google Pixel 9 Pro 5G 16/256GB Czarny",
+    "category": [
+      "Smartfony",
+      "Google",
+      "Do codziennego użytku"
+    ],
+    "description": [
+      "Ekran: 6,3",
+      "Procesor: Google Tensor G4",
+      "Pamięć RAM:16 GB",
+      "Pamięć wbudowana:256 GB"
+    ],
+    "price": 4099.00,
+    "imageUrl": "Images/google_pixel_9_pro_16_265GB.png"
+  }
 ]
