@@ -1,12 +1,37 @@
 ﻿@page "/login"
 @inject NavigationManager Navigation
+@inject Blazored.LocalStorage.ILocalStorageService localStorage
 
 <div class="page-container">
 	<div class="login-panel">
 		<h3>Zaloguje się</h3>
-		<input type="text" placeholder="Email" class="text-input" />
-		<input type="password" placeholder="Hasło" class="text-input" />
-		<button class="login-btn">Zaloguj</button>
+
+
+		<EditForm Model="@userLogin" OnValidSubmit="LoginUser">
+			<DataAnnotationsValidator />
+
+			<div class="form-group">
+				<InputText @bind-Value="userLogin.Email" placeholder="Email" class="text-input" />
+				<ValidationMessage For="@(() => userLogin.Email)" />
+			</div>
+			<div class="form-group">
+				<InputText @bind-Value="userLogin.Password" type="password" placeholder="Hasło" class="text-input" />
+				<ValidationMessage For="@(() => userLogin.Password)" />
+			</div>
+			
+
+			<button type="submit" class="login-btn" disabled="@isLoggingIn">
+				@if (isLoggingIn)
+				{
+					<span>Logowanie...</span>
+				}
+				else
+				{
+					<span>Zaloguj</span>
+				}
+			</button>
+		</EditForm>
+			
 		<p>Nie pamiętasz hasła? <a @onclick="() => NavigateToRegister()" class="register-link">Zarejestruj się</a></p>
 
 	</div>
@@ -14,9 +39,40 @@
 
 @code {
 
+	private UserLogin userLogin = new UserLogin();
+	private bool isLoggingIn = false;
+
+
 	private void NavigateToRegister()
 	{
 		Navigation.NavigateTo("/register");
+	}
+
+	private async Task LoginUser()
+	{
+
+		var dataFromLocalStorage = await localStorage.GetItemAsync<UserRegistration>("registeredUser");
+
+		if(dataFromLocalStorage != null)
+		{
+			if(userLogin.Email == dataFromLocalStorage.email && userLogin.Password == dataFromLocalStorage.password)
+			{
+				isLoggingIn = true;
+				StateHasChanged();
+				await Task.Delay(1000);
+
+				await localStorage.RemoveItemAsync("loggedInUser");
+				await localStorage.SetItemAsync("loggedInUser", dataFromLocalStorage);
+
+				Navigation.NavigateTo("/");
+			}
+			else
+			{
+				Console.WriteLine("Invalid email or password.");
+
+			}
+		}
+		
 	}
 
 }
