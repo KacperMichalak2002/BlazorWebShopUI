@@ -51,6 +51,7 @@
 @code {
 
 	private UserRegistration userRegistration = new UserRegistration();
+	private UserData userData = new UserData();
 	private bool isRegistering = false;
 	private string errorMessage = string.Empty;
 	private string successMessage = string.Empty;
@@ -74,6 +75,10 @@
 				return;
 			}
 
+			userData.firstName = userRegistration.firstName;
+			userData.lastName = userRegistration.lastName;
+			userData.email = userRegistration.email;
+
 			await RegisterToLocalStorage();
 
 			await Task.Delay(2000);
@@ -87,6 +92,8 @@
 	protected async Task RegisterToLocalStorage()
 	{
 		await localStorage.RemoveItemAsync("registeredUser");
+		await localStorage.RemoveItemAsync("userData");
 		await localStorage.SetItemAsync("registeredUser", userRegistration);
+		await localStorage.SetItemAsync("userData", userData);
 	}
 }

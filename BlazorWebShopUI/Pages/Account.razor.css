@@ -1,0 +1,137 @@
+﻿ .page-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.personal-data-container {
+    background: #777777;
+    border: 3px solid #9540B9;
+    border-radius: 22px;
+    width:550px;
+}
+    .personal-data-container h3 {
+        margin-left: 15px;
+    }
+
+.address-container {
+    background: #777777;
+    border: 3px solid #9540B9;
+    border-radius: 22px;
+    width: 498px;
+}
+
+    .address-container h3 {
+        margin-left: 15px;
+    }
+
+::deep .reg-input {
+    background: #D9D9D9;
+    width: 270px;
+    height: 56px;
+    border: 1px solid #989898;
+    border-radius: 13px;
+    margin-top: 5px;
+}
+
+::deep form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    width: fit-content;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+    margin-bottom: 5px;
+}
+
+    .form-group label {
+        width: 120px;
+        margin-right: 10px;
+    }
+
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+::deep .update-btn {
+    color: #FFFFFF;
+    background: #9540B9;
+    margin-top: 20px;
+    border-radius: 22px;
+    border: none;
+    width: 218px;
+    height: 50px;
+}
+        .update-btn:hover {
+            background: #A05BC6;
+        }
+
+.order-history-container {
+    overflow-y: auto;
+    max-height: 200px;
+    background: #777777;
+    border: 3px solid #9540B9;
+    border-radius: 22px;
+    width: 1000px;
+}
+
+    .order-history-container img {
+        width: calc(50% - 5px);
+        height: 100px;
+        border-radius: 12px;
+        object-fit: cover;
+        border-radius: 22px;
+        margin:2px;
+    }
+    .order-history-container h3 {
+        margin-left: 15px;
+    }
+
+
+.order-main {
+    margin: 20px;
+    align-content: center;
+    justify-content: center;
+    background: #5B5B5B;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    border: 3px solid #9540B9;
+    border-radius: 22px;
+}
+
+.order-images {
+    overflow-y: auto;
+    max-height: 120px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-right: 4px solid #9540B9;
+    border-radius: 0px 22px 22px 0px;
+    width: 25%;
+}
+
+.order-status {
+    border-right: 4px solid #9540B9;
+    border-radius: 0px 22px 22px 0px;
+    width: 25%;
+}
+
+.order-date {
+    border-right: 4px solid #9540B9;
+    border-radius: 0px 22px 22px 0px;
+    width: 25%;
+}
+.order-toral {
+    width: 25%;
+}

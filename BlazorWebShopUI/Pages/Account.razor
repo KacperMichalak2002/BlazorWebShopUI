@@ -1,6 +1,135 @@
 ﻿@page "/account"
+@inject Blazored.LocalStorage.ILocalStorageService localStorage
 
-<h3>Account</h3>
+
+<div class="page-container">
+
+	<EditForm Model="@userData" OnValidSubmit="UpdateUserData">
+			<DataAnnotationsValidator/>
+
+	<div class="personal-data-container">
+		<h3>Dane osobwe</h3>
+			<div class="form-group">
+				<label for="firstName">Imię:</label>
+				<InputText id="firstName" @bind-Value="userData.firstName" placeholder="@userData.firstName" class="reg-input" label="Imię" />
+				<ValidationMessage For="@(() => userData.firstName)" />
+			</div>
+			<div class="form-group">
+				<label for="lastName">Nazwisko:</label>
+				<InputText id="lastName" @bind-Value="userData.lastName" placeholder="@userData.lastName" class="reg-input" />
+				<ValidationMessage For="@(() => userData.lastName)" />
+			</div>
+			<div class="form-group">
+				<label for="phoneNumber">Telefon:</label>
+				<InputText id="phoneNumber" @bind-Value="userData.phoneNumber" placeholder="@userData.phoneNumber" class="reg-input" />
+				<ValidationMessage For="@(() => userData.phoneNumber)" />
+			</div>
+			<div class="form-group">
+				<label for="email">Email:</label>
+				<InputText id="email" @bind-Value="userData.email" placeholder="@userData.email" class="reg-input" />
+				<ValidationMessage For="@(() => userData.email)" />
+			</div>
+	</div>
+
+	<div class="address-container">
+		<h3>Adres dostawy</h3>
+
+			<div class="form-group">
+				<label for="city">Miasto:</label>
+				<InputText id="city" @bind-Value="userData.city" placeholder="@userData.city" class="reg-input" />
+				<ValidationMessage For="@(() => userData.city)" />
+			</div>
+			<div class="form-group">
+				<label for="street">Ulica:</label>
+				<InputText id="street" @bind-Value="userData.street" placeholder="@userData.street" class="reg-input" />
+				<ValidationMessage For="@(() => userData.street)" />
+			</div>
+			<div class="form-group">
+				<label for="posta-code">Kod pocztowy:</label>
+				<InputText id="posta-code" @bind-Value="userData.postalCode" placeholder="@userData.postalCode" class="reg-input" />
+				<ValidationMessage For="@(() => userData.postalCode)" />
+			</div>
+			<div class="button-container">
+				<button type="submit" class="update-btn" disabled="@isUpdating">
+					@if (isUpdating)
+					{
+						<span>Aktualizowanie...</span>
+					}
+					else
+					{
+						<span>Zapisz zmiany</span>
+					}
+				</button>
+			</div>
+	</div>
+	</EditForm>
+	
+	<div class="order-history-container">
+		<h3>Historia Zamówień</h3>
+		<div class="order-main">
+			<div class="order-images">
+				<img src="@imageUrl" />
+				<img src="@imageUrl" />
+				<img src="@imageUrl" />
+			</div>
+			<div class="order-status">
+				<h4>Status:</h4>
+				<p>W trakcie przygotowania</p>
+			</div>
+			<div class="order-date">
+				<h4>Data złożenia zamówienia</h4>
+				<p>14.04.2025</p>
+			</div>
+			<div class="order-toral">
+				<h4>Kwota:</h4>
+				<p>@totalPrice</p>
+			</div>
+		</div>
+		<div class="order-main">
+			<div class="order-images">
+				<img src="@imageUrl" />
+				<img src="@imageUrl" />
+				<img src="@imageUrl" />
+			</div>
+			<div class="order-status">
+				<h4>Status:</h4>
+				<p>W trakcie przygotowania</p>
+			</div>
+			<div class="order-date">
+				<h4>Data złożenia zamówienia</h4>
+				<p>14.04.2025</p>
+			</div>
+			<div class="order-toral">
+				<h4>Kwota:</h4>
+				<p>@totalPrice</p>
+			</div>
+		</div>
+	</div>
+
+</div>
+
 @code {
+
+	public UserData userData = new UserData();
+	bool isUpdating = false;
+
+	private string imageUrl = "Images/google_pixel_9_pro_16_265GB.png";
+	private string totalPrice = "1234,56 zł";
+
+	protected async override Task OnInitializedAsync()
+	{
+		userData = await localStorage.GetItemAsync<UserData>("userData") ?? new UserData();
+		Console.WriteLine(userData.firstName);
+	}
+
+	private async Task UpdateUserData()
+	{
+		isUpdating = true;
+		await localStorage.SetItemAsync("userData", userData);
+		await Task.Delay(1000);
+		isUpdating = false;
+		StateHasChanged();
+		Console.WriteLine("User data updated successfully.");
+	}
 
 }
