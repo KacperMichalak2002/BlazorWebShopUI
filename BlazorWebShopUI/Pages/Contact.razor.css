@@ -1,0 +1,21 @@
+﻿.page-container {
+    display: flex;
+    justify-content: center;
+}
+
+.contact-panel {
+    justify-content: center;
+    width: 60%;
+    height: 300px;
+    background: #777777;
+    border: 3px solid #9540B9;
+    border-radius: 22px;
+    display: flex;
+    flex-directionL row;
+    gap: 1rem;
+}
+
+.inner-panel {
+    margin-top: 3.5rem;
+    height: fit-content;
+}

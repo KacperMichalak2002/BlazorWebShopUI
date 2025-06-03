@@ -7,7 +7,7 @@
 	<div class="icons">
 		<button @onclick="() => NavigateToLogin()"> <img class="top-nav-icon" src="@AccountImageUrl" alt="account icon" /> Konto</button>
 		<button> <img class="top-nav-icon" src="@CartImageUrl" alt="account icon" /> Koszyk</button>
-		<button> <img class="top-nav-icon" src="@ContactImageUrl" alt="account icon" /> Kontakt</button>
+		<button @onclick="() => NavigateToContact()"> <img class="top-nav-icon" src="@ContactImageUrl" alt="account icon" /> Kontakt</button>
 	</div>
 </div>
 
@@ -50,6 +50,11 @@
 		{
 			Navigation.NavigateTo("/login");
 		}
+	}
+
+	private void NavigateToContact()
+	{
+		Navigation.NavigateTo("/contact");
 	}
 
 	
