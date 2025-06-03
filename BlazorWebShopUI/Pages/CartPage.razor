@@ -1,5 +1,5 @@
 ﻿@page "/cart"
-
+@inject NavigationManager Navigation;
 <div class="page-container">
 	<h2>Koszyk</h2>
 	<div class="cart-main">
@@ -12,7 +12,7 @@
 		<div class="cart-main-right">
 			<div class="cart-summary">
 				<p>Do zapłay: <span>@cartItemPrice zł</span></p>
-				<button class="checkout-btn">Przejdź do kasy</button>
+				<button @onclick="() => NavigateToFinalizePage()" class="checkout-btn">Przejdź do kasy</button>
 			</div>
 		</div>
 		
@@ -25,5 +25,10 @@
 	private string trashIconUrl = "Images/SvgIcons/trash-can.svg";
 	private string cartItemName = "Przykładowy Produkt";
 	private float cartItemPrice = 29.99f;
+
+	private void NavigateToFinalizePage()
+	{
+		Navigation.NavigateTo("/finalize");
+	}
 
 }

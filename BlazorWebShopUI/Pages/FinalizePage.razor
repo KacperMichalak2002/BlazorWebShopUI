@@ -1,0 +1,111 @@
+﻿@page "/finalize"
+@inject Blazored.LocalStorage.ILocalStorageService LocalStorage;
+
+<div class="page-container">
+	<h3>Dostawa i płatność</h3>
+	<div class="finalize-card">
+		<EditForm Model="@finalizeOrder" OnValidSubmit="SaveOrder">
+			<DataAnnotationsValidator />
+		
+		<div class="finalize-card-left">
+			<div class="delivery-container">
+				<h3>Sposób dostawy</h3>
+				<InputRadioGroup @bind-Value="finalizeOrder.deliveryCompany" class="delivery-radio-group">
+						@foreach(var company in Enum.GetValues<DeliveryCompany>())
+						{
+							<label class="delivery-option">
+								<InputRadio Value="@company" class="delivery-radio"/>
+								<span class="delivery-label">@company.ToString()</span>
+								<span class="delivery-price">@DeliverPrices[company] zł</span>
+							</label>
+						}
+
+					</InputRadioGroup>
+			</div>
+			<div class="delivery-address-container">
+				<h3>Adres dostawy</h3>
+					<div class="form-group">
+						<InputText @bind-Value="finalizeOrder.userData.firstName" placeholder="Imię" class="order-input" />
+						<ValidationMessage For="@(() => finalizeOrder.userData.firstName)" />
+					</div>
+					<div class="form-group">
+					<InputText @bind-Value="finalizeOrder.userData.lastName" placeholder="Nazwisko" class="order-input" />
+					<ValidationMessage For="@(() => finalizeOrder.userData.lastName)" />
+					</div>
+					<div class="form-group">
+						<InputText @bind-Value="finalizeOrder.userData.street" placeholder="Ulica i numer budynku" class="order-input" />
+						<ValidationMessage For="@(() => finalizeOrder.userData.street)" />
+					</div>
+					<div class="form-group">
+						<InputText @bind-Value="finalizeOrder.userData.postalCode" placeholder="Kod pocztowy" class="order-input" />
+						<ValidationMessage For="@(() => finalizeOrder.userData.postalCode)" />
+					</div>
+					<div class="form-group">
+						<InputText @bind-Value="finalizeOrder.userData.phoneNumber" placeholder="Numer telefonu" class="order-input" />
+						<ValidationMessage For="@(() => finalizeOrder.userData.phoneNumber)" />
+					</div>
+					<div class="form-group">
+						<InputText @bind-Value="finalizeOrder.userData.email" placeholder="Email" class="order-input" />
+						<ValidationMessage For="@(() => finalizeOrder.userData.email)" />
+					</div>
+			</div>
+			<div class="payment-method-container">
+				<h3>Metoda płatności</h3>
+					<InputRadioGroup @bind-Value="finalizeOrder.paymentMethod" class="delivery-radio-group">
+						@foreach (var payment in Enum.GetValues<PaymentMethod>())
+						{
+							<label class="delivery-option">
+								<InputRadio Value="@payment" class="delivery-radio" />
+								<span class="delivery-label">@payment.ToString()</span>
+							</label>
+						}
+					</InputRadioGroup>
+			</div>
+		</div>
+		<div class="finalize-card-right">
+			<dvi class="pay-container">
+					<p>Do zapłay: <span>@finalPrice zł</span></p>
+					<button type="submit" class="pay-btn" disabled="@isOrderFinished">
+						@if (isOrderFinished)
+						{
+							<span>Zamawianie...</span>
+						}
+						else
+						{
+							<span>Zapłać</span>
+						}
+					</button>
+			</dvi>
+		</div>
+		</EditForm>
+	</div>
+</div>
+
+@code {
+	bool isOrderFinished = false;
+	private FinalizeOrder finalizeOrder = new FinalizeOrder();
+	private float basePrice = 29.99f;
+	private float finalPrice => basePrice + 
+	(DeliverPrices.ContainsKey(finalizeOrder.deliveryCompany) ? DeliverPrices[finalizeOrder.deliveryCompany] : 0);
+
+
+	private  async Task SaveOrder()
+	{
+
+	}
+
+	private async Task LoadUserData()
+	{
+		finalizeOrder.userData =  await LocalStorage.GetItemAsync<UserData>("userData") ?? new UserData();
+	}
+
+	
+	private Dictionary<DeliveryCompany, float> DeliverPrices = new()
+	{
+		{ DeliveryCompany.FedEx, 14.99f },
+		{ DeliveryCompany.DPD, 16.99f },
+		{ DeliveryCompany.UPS, 18.99f  }
+	};
+
+
+}
