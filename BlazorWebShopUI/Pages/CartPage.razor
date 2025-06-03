@@ -1,0 +1,29 @@
+﻿@page "/cart"
+
+<div class="page-container">
+	<h2>Koszyk</h2>
+	<div class="cart-main">
+		<div class="car-main-left">
+			<CartItem ImageUrl="@ImageUrl" 
+				trashIconUrl="@trashIconUrl" 
+				cartItemName="@cartItemName"
+					  cartItemPrice="@cartItemPrice" />
+		</div>
+		<div class="cart-main-right">
+			<div class="cart-summary">
+				<p>Do zapłay: <span>@cartItemPrice zł</span></p>
+				<button class="checkout-btn">Przejdź do kasy</button>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+@code {
+
+	private string ImageUrl = "Images/google_pixel_9_pro_16_265GB.png";
+	private string trashIconUrl = "Images/SvgIcons/trash-can.svg";
+	private string cartItemName = "Przykładowy Produkt";
+	private float cartItemPrice = 29.99f;
+
+}

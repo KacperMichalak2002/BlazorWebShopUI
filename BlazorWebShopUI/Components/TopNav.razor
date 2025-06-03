@@ -6,7 +6,7 @@
 	<input class="search-bar" placeholder="Wyszukaj" />
 	<div class="icons">
 		<button @onclick="() => NavigateToLogin()"> <img class="top-nav-icon" src="@AccountImageUrl" alt="account icon" /> Konto</button>
-		<button> <img class="top-nav-icon" src="@CartImageUrl" alt="account icon" /> Koszyk</button>
+		<button @onclick="() => NavigateToCart()"> <img class="top-nav-icon" src="@CartImageUrl" alt="account icon" /> Koszyk</button>
 		<button @onclick="() => NavigateToContact()"> <img class="top-nav-icon" src="@ContactImageUrl" alt="account icon" /> Kontakt</button>
 	</div>
 </div>
@@ -57,7 +57,10 @@
 		Navigation.NavigateTo("/contact");
 	}
 
-	
+	private void NavigateToCart()
+	{
+		Navigation.NavigateTo("/cart");
+	}
 
 
 }
