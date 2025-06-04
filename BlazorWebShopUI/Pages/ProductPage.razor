@@ -35,8 +35,8 @@
 		</div>
 		<div class="add-to-card">
 			<p>@productCardInfo.Price zł</p>
-			<p><input type="number" min="1" max="10" value="1" class="quantity-input" /> Ilość</p>
-			<button class="add-to-card-btn">Dodaj do koszyka</button>
+			<p><input type="number" min="1" max="10" class="quantity-input" @bind="amount" /> Ilość</p>
+			<button class="add-to-card-btn" @onclick="() => AddToCart(productCardInfo)">Dodaj do koszyka</button>
 			<button class="buy-now-btn">Kup teraz</button>
 		</div>
 	</div>
@@ -102,7 +102,38 @@
 
 	public ProductCardInfo productCardInfo { get; set; } = new ProductCardInfo();
 	private List<ProductCardInfo> Products = new List<ProductCardInfo>();
+	private List<CarItemModel> CartItems = new List<CarItemModel>();
+	private int amount = 1;
 	private string? productImageUrl;
+
+	private async Task AddToCart(ProductCardInfo product)
+	{
+		var productExist = CartItems.FirstOrDefault(prodInCart => prodInCart.Id == product.Id);
+
+		if (productExist == null)
+		{
+			Console.WriteLine("ADDING");
+			CarItemModel itemToAdd = new CarItemModel();
+			itemToAdd.Id = product.Id;
+			itemToAdd.amount = amount;
+			CartItems.Add(itemToAdd);
+			await SaveCartItems(CartItems);
+		}
+		else
+		{
+			CartItems.Remove(productExist);
+			CarItemModel itemToAdd = new CarItemModel();
+			itemToAdd.Id = product.Id;
+			itemToAdd.amount = amount;
+			CartItems.Add(itemToAdd);
+			await SaveCartItems(CartItems);
+		}
+	}
+
+	private async Task SaveCartItems(List<CarItemModel> cartItems)
+	{
+		await LocalStorage.SetItemAsync("cartItems", cartItems);
+	}
 
 	private void setCurrentImage(string imageUrl)
 	{
@@ -118,6 +149,8 @@
 				$"data/ProductCardInfo.json?nocache={Guid.NewGuid()}"
 			);
 
+			CartItems = await LocalStorage.GetItemAsync<List<CarItemModel>>("cartItems") ?? new List<CarItemModel>();
+			Console.WriteLine(CartItems.Count);
 			if (fetchedProducts != null)
 			{
 				Console.WriteLine($"Fetched {fetchedProducts.Count} products.");

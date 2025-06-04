@@ -1,4 +1,4 @@
-﻿@page "/finalize"
+﻿@page "/finalize/{totalCost:float}"
 @inject Blazored.LocalStorage.ILocalStorageService LocalStorage;
 
 <div class="page-container">
@@ -82,9 +82,11 @@
 </div>
 
 @code {
+	[Parameter]
+	public float totalCost { get; set; } = 0f;
 	bool isOrderFinished = false;
 	private FinalizeOrder finalizeOrder = new FinalizeOrder();
-	private float basePrice = 29.99f;
+	public float basePrice;
 	private float finalPrice => basePrice + 
 	(DeliverPrices.ContainsKey(finalizeOrder.deliveryCompany) ? DeliverPrices[finalizeOrder.deliveryCompany] : 0);
 
@@ -92,6 +94,12 @@
 	private  async Task SaveOrder()
 	{
 
+	}
+
+	protected override async Task OnParametersSetAsync()
+	{
+		basePrice = totalCost;
+		await LoadUserData();
 	}
 
 	private async Task LoadUserData()

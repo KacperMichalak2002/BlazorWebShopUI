@@ -1,10 +1,10 @@
-﻿
+﻿@inject Blazored.LocalStorage.ILocalStorageService LocalStorage
 <div class="cart-item">
 	<img src="@ImageUrl" alt="Product Image" class="cart-item-image" />
 	<p>@cartItemName</p>
-	<p><input type="number" value="1" class="cart-item-quantity" min="1" /> Ilość</p>
+	<p><input type="number" class="cart-item-quantity" min="1" @bind="amount" /> Ilość</p>
 	<p>@cartItemPrice zł</p>
-	<button class="del-btn"><img src="@trashIconUrl" /></button>
+	<button class="del-btn" @onclick="() => deleteFromCart()"><img src="@trashIconUrl" /></button>
 </div>
 @code {
 
@@ -12,4 +12,24 @@
 	[Parameter] public string trashIconUrl { get; set; } = string.Empty;
 	[Parameter] public string cartItemName { get; set; } = string.Empty;
 	[Parameter] public float cartItemPrice { get; set; } = 0.0f;
+	[Parameter] public int amount { get; set; } = 1;
+	[Parameter] public int prodId { get; set; }
+	[Parameter] public EventCallback OnItemDeleted { get; set; }
+
+	private async Task deleteFromCart()
+	{
+		var productsInCart = await LocalStorage.GetItemAsync<List<CarItemModel>>("cartItems");
+
+		if(productsInCart != null)
+		{
+			var prodToDelete = productsInCart.FirstOrDefault(prod => prod.Id == prodId);
+
+			if(prodToDelete != null)
+			{
+				productsInCart.Remove(prodToDelete);
+				await LocalStorage.SetItemAsync<List<CarItemModel>>("cartItems", productsInCart);
+				await OnItemDeleted.InvokeAsync();
+			}
+		}
+	}
 }

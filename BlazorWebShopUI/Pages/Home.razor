@@ -1,7 +1,7 @@
 ﻿@page "/"
 @inject HttpClient Http
 @inject NavigationManager Navigation
-
+@inject Blazored.LocalStorage.ILocalStorageService LocalStorage
 <PageTitle>Debug</PageTitle>
 
 <div class="page-container">
@@ -28,10 +28,18 @@
     {
         try
         {
-			Console.WriteLine("Fetching products from JSON file...");
+            Console.WriteLine("Fetching products from JSON file...");
             var fetchedProducts = await Http.GetFromJsonAsync<List<ProductCardInfo>>(
                 $"data/ProductCardInfo.json?nocache={Guid.NewGuid()}"
             );
+
+            var fetchedCart = await LocalStorage.GetItemAsync<List<CarItemModel>>("cartItems");
+
+            if(fetchedCart == null)
+            {
+                await LocalStorage.SetItemAsync("cartItems", new List<CarItemModel>());
+            }
+            
 
             if (fetchedProducts != null)
             {

@@ -1,17 +1,28 @@
 ﻿@page "/cart"
 @inject NavigationManager Navigation;
+@inject HttpClient Http;
+@inject Blazored.LocalStorage.ILocalStorageService LocalStorage
+
 <div class="page-container">
 	<h2>Koszyk</h2>
 	<div class="cart-main">
 		<div class="car-main-left">
-			<CartItem ImageUrl="@ImageUrl" 
-				trashIconUrl="@trashIconUrl" 
-				cartItemName="@cartItemName"
-					  cartItemPrice="@cartItemPrice" />
+
+			@foreach(var prodToDisplay in cartProductsToDisplay)
+			{
+				<CartItem ImageUrl=@prodToDisplay.ImageUrl
+						  trashIconUrl="@trashIconUrl"
+						  cartItemName="@prodToDisplay.cartItemName"
+						  cartItemPrice="@prodToDisplay.cartItemPrice"
+						  amount="@prodToDisplay.amount"
+						  prodId="@prodToDisplay.id"
+						  OnItemDeleted="RefreshCartAsync"/>
+			}
+			
 		</div>
 		<div class="cart-main-right">
 			<div class="cart-summary">
-				<p>Do zapłay: <span>@cartItemPrice zł</span></p>
+				<p>Do zapłay: <span>@totalCost zł</span></p>
 				<button @onclick="() => NavigateToFinalizePage()" class="checkout-btn">Przejdź do kasy</button>
 			</div>
 		</div>
@@ -21,14 +32,85 @@
 
 @code {
 
-	private string ImageUrl = "Images/google_pixel_9_pro_16_265GB.png";
 	private string trashIconUrl = "Images/SvgIcons/trash-can.svg";
-	private string cartItemName = "Przykładowy Produkt";
-	private float cartItemPrice = 29.99f;
+	private float totalCost = 0;
+	private List<CarItemModel> cartItems = new List<CarItemModel>();
+	private List<ProductCardInfo> products = new List<ProductCardInfo>();
+	private List<CartItemToDisplay> cartProductsToDisplay = new List<CartItemToDisplay>();
+
+	private async Task RefreshCartAsync()
+	{
+		cartProductsToDisplay.Clear();
+		totalCost = 0;
+
+		cartItems = await LocalStorage.GetItemAsync<List<CarItemModel>>("cartItems") ?? new List<CarItemModel>();
+		foreach (var cartItem in cartItems)
+		{
+			var prod = products.FirstOrDefault(prod => prod.Id == cartItem.Id);
+
+			if (prod != null)
+			{
+				CartItemToDisplay item = new CartItemToDisplay();
+				item.id = cartItem.Id;
+				item.amount = cartItem.amount;
+				item.ImageUrl = prod.ImageUrl;
+				item.cartItemName = prod.Title;
+				item.cartItemPrice = prod.Price;
+				cartProductsToDisplay.Add(item);
+			}
+
+		}
+		calculateTotal();
+
+	}
 
 	private void NavigateToFinalizePage()
 	{
-		Navigation.NavigateTo("/finalize");
+		Navigation.NavigateTo($"/finalize/{totalCost}");
 	}
 
+	protected override async Task OnInitializedAsync()
+	{
+		cartItems = await LocalStorage.GetItemAsync <List<CarItemModel>>("cartItems")?? new List<CarItemModel>();
+
+		products = await Http.GetFromJsonAsync<List<ProductCardInfo>>
+		($"data/ProductCardInfo.json?nocache={Guid.NewGuid()}")?? new List<ProductCardInfo>();
+
+		foreach(var cartItem in cartItems)
+		{
+			var prod = products.FirstOrDefault(prod => prod.Id == cartItem.Id);
+
+			if(prod != null)
+			{
+				CartItemToDisplay item = new CartItemToDisplay();
+				item.id = cartItem.Id;
+				item.amount = cartItem.amount;
+				item.ImageUrl = prod.ImageUrl;
+				item.cartItemName = prod.Title;
+				item.cartItemPrice = prod.Price;
+				cartProductsToDisplay.Add(item);
+			}
+
+		}
+		calculateTotal();
+	}
+
+	private void calculateTotal()
+	{
+		totalCost = 0;
+		foreach(var priceToAdd in cartProductsToDisplay)
+		{
+			totalCost += (priceToAdd.cartItemPrice * priceToAdd.amount);
+		}
+	}
+
+
+	public class CartItemToDisplay
+	{
+		public string ImageUrl { get; set; } = string.Empty;
+		public string cartItemName { get; set; } = string.Empty;
+		public float cartItemPrice { get; set; }
+		public int amount { get; set; }
+		public int id { get; set; }
+	}
 }
