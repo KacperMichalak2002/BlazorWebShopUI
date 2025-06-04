@@ -1,6 +1,7 @@
 [
   {
-    "title": "OMEN by HP",
+    "id": 1,
+    "title": "HP OMEN 24 FHD IPS 165Hz 1ms Gaming",
     "category": [
       "Monitory",
       "Monitory LED",
@@ -19,9 +20,16 @@
       "Czestotliwosc odswiezania": "165Hz"
     },
     "price": 599.00,
-    "imageUrl": "Images/omen_23_8.png"
+    "imageUrl": "Images/omen_23_8.png",
+    "images": [
+      "Images/omen_23_8.png",
+      "Images/omen_23_8.png",
+      "Images/omen_23_8.png",
+      "Images/iiyama_G-Master_G2745HSU-B2.png"
+    ]
   },
   {
+    "id": 2,
     "title": "iiyama G-Master G2745HSU-B2 Black Hawk",
     "category": [
       "Monitory",
@@ -44,6 +52,7 @@
     "imageUrl": "Images/iiyama_G-Master_G2745HSU-B2.png"
   },
   {
+    "id": 3,
     "title": "Intel Core i9-12900K",
     "category": [
       "Procesory",
@@ -66,6 +75,7 @@
     "imageUrl": "Images/intel_i9_12900k.png"
   },
   {
+    "id": 4,
     "title": "Google Pixel 9 Pro 5G 16/256GB Czarny",
     "category": [
       "Smartfony",
@@ -89,6 +99,7 @@
   }
   ,
   {
+    "id": 5,
     "title": "Google Pixel 9 Pro 5G 16/256GB Czarny",
     "category": [
       "Smartfony",

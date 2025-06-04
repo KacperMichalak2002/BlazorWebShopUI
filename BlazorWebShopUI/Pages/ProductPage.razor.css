@@ -1,0 +1,239 @@
+﻿.page-container
+{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+.main {
+    display: flex;
+    flex-direction: row;
+    width:100%;
+    gap: 20px;
+}
+.product-images {
+    display:flex;
+    flex-direction:column;
+    background: #5B5B5B;
+    border-radius: 22px;
+    width: 130px;
+    max-height: 400px;
+    overflow-y: auto;
+    align-items:center;
+}
+::-webkit-scrollbar{
+    width:1px;
+}
+
+    .product-images img {
+        padding:5px;
+        width: 110px;
+        height: 100px;
+        border-radius: 22px;
+    }
+
+.chosen-image{
+    display:flex;
+    border-radius:22px;
+    height:410px;
+    width:480px;
+}
+.chosen-image img {
+    border-radius: 22px;
+    width:100%;
+    height:100%;
+}
+
+.basic-info{
+    display: flex;
+    flex-direction: column;
+    width:30%;
+    height:fit-content;
+    line-height: 1;
+
+}
+
+
+.star-raiting {
+    height: 20px;
+    width: 100px;  
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+.star-raiting img {
+    width: 20px;
+    height: 20px;
+
+}
+
+.add-to-card {
+    background: #5B5B5B;
+    border: 3px solid #9540B9;
+    border-radius: 22px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+    .add-to-card button {
+        color: #FFFFFF;
+        background: #9540B9;
+        margin-top: 20px;
+        border-radius: 22px;
+        border: none;
+        width: 218px;
+        height: 50px;
+    }
+
+    .add-to-card button:hover {
+        background: #A05BC6;
+    }
+
+.quantity-input {
+    height: 40px;
+    width: 42px;
+    background: #D9D9D9;
+    text-align: center;
+    border: 1px solid #989898;
+    border-radius: 13px;
+}
+
+.controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 40px;
+    width: 95%;
+    background: #BFBFBF;
+    border-bottom: 5px solid #9540B9;
+    border-radius: 5px;
+}
+
+    .controls button {
+        color: #FFFFFF;
+        background: #9540B9;
+        margin-top: 20px;
+        border-radius: 22px;
+        border: none;
+        width: 218px;
+        height: 50px;
+        margin-bottom: 10px;
+    }
+
+.product-desc {
+    display: flex;
+    flex-direction: column;
+    width: 98%;
+    height: fit-content;
+    background: #574D5B;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.product-desc-row {
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    gap: 20px;
+    padding: 0 40px;
+}
+
+    .product-desc-row img {
+        width: 20%;
+        height: 20%;
+        border-radius: 5px;
+    }
+
+    .product-desc-row p{
+        width: 60%;
+        color: #FFFFFF;
+        font-size: 18px;
+        line-height: 24px;
+    }
+
+.specification {
+    display: flex;
+    flex-direction: column;
+    width: 98%;
+    height: fit-content;
+    background: #574D5B;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.spec-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-top: 1px solid #FFFFFF;
+    color: #FFFFFF;
+}
+
+    .spec-row p {
+        text-align: center;
+    }
+
+.reviews {
+    width: 98%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background: #574D5B;
+    border-radius: 5px;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+    .reviews h3 {
+        margin-left: 20px;
+        height: 40px;
+        width: fit-content;
+    }
+
+.all-reviews {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-items:center;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    margin-right:100px;
+}
+
+.review {
+    display: flex;
+    flex-direction: column;
+    background: #777777;
+    border-radius: 22px;
+    height: fit-content;
+    width: 350px;
+    padding: 20px;
+}
+.user-icon {
+    background: #D9D9D9;
+    border-radius:50%;
+    height: 50px;
+    width: 50px;
+}
+
+.review-author {
+    padding:5px;
+}
+
+
+.review-rating {
+    height: 20px;
+    width: 200px;
+}
+
+    .review-rating img {
+    width: 20px;
+    height: 20px;
+
+    }
+
+    .review-text {
+    }

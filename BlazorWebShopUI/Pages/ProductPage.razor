@@ -1,0 +1,154 @@
+﻿@page "/product/{id:int}"
+@inject Blazored.LocalStorage.ILocalStorageService LocalStorage
+@inject HttpClient Http
+@inject IJSRuntime JS;
+
+<div class="page-container">
+	<div class="main">
+		<div class="product-images">
+			@foreach(var image in productCardInfo.images)
+			{
+				<img src="@image" class="product-image" alt="Product Image" @onclick="() => setCurrentImage(image)" />
+			}
+		</div>
+		<div class="chosen-image">
+			<img src="@productImageUrl" />
+		</div>
+		<div class="basic-info">
+			<h2>@productCardInfo.Title</h2>
+			<h4>Producent: @(productCardInfo.Specification.ContainsKey("Producent") ? productCardInfo.Specification["Producent"] : "N/A")</h4>
+			<div class="star-raiting">
+				<img class="star" src="Images\SvgIcons\star.svg" />
+				<img class="star" src="Images\SvgIcons\star.svg" />
+				<img class="star" src="Images\SvgIcons\star.svg" />
+				<img class="star" src="Images\SvgIcons\star.svg" />
+				<img class="star" src="Images\SvgIcons\star.svg" />
+			</div>
+
+			@if (productCardInfo.Description != null)
+			{
+				@foreach (var desc in productCardInfo.Description.Take(4))
+				{
+					<p class="description">@desc</p>
+				}
+			}
+		</div>
+		<div class="add-to-card">
+			<p>@productCardInfo.Price zł</p>
+			<p><input type="number" min="1" max="10" value="1" class="quantity-input" /> Ilość</p>
+			<button class="add-to-card-btn">Dodaj do koszyka</button>
+			<button class="buy-now-btn">Kup teraz</button>
+		</div>
+	</div>
+	<div class="controls">
+		<button class="desc-btn" @onclick="ScrollToDescription">Opis</button>
+		<button class="spec-btn" @onclick="ScrollToSpecification">Specyfikacja</button>
+
+		<button class="reviews-btn" @onclick="ScrollToReview">Opinie</button>
+	</div>
+	<div class="product-desc" id="description">
+		<div class="product-desc-row">
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sagittis lectus vel velit eleifend lacinia. Pellentesque nunc risus, lobortis at elit ut, sodales porta velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam mollis enim a dui convallis tincidunt. Fusce rhoncus ligula non scelerisque tincidunt. Donec placerat pulvinar dictum. Sed eu fringilla massa. Donec dictum felis vel purus aliquet dignissim. Etiam in molestie mi. Maecenas sit amet tempus felis, eget sollicitudin nibh.Nullam augue purus, pharetra at scelerisque non, euismod id magna.</p>
+			<img src="@(productCardInfo.images.Count > 0 ? productCardInfo.images[0] : "Images/test.png")" />
+
+		</div>
+		<div class="product-desc-row">
+			<img src="@(productCardInfo.images.Count > 1 ? productCardInfo.images[1] : "Images/test.png")" />
+			<p>Quisque nec tincidunt est. Vestibulum malesuada dui ut lorem ultricies imperdiet. Proin cursus suscipit neque, eget cursus augue tincidunt vitae. Maecenas a velit id ipsum pulvinar volutpat. Integer facilisis massa sit amet ornare cursus. Nulla ac molestie est. Sed hendrerit dui vel porta laoreet. Morbi sit amet lorem ut erat suscipit aliquam. Fusce ut diam non magna fringilla placerat. Phasellus vitae scelerisque nibh, ac dignissim elit. Mauris lobortis suscipit turpis ac viverra.</p>
+		</div>
+	</div>
+	<div class="specification" id="specification">
+		<h3>Specyfikacja</h3>
+
+		@foreach(var spec in productCardInfo.Specification)
+		{
+			<div class="spec-row">
+				<p>@spec.Key</p>
+				<p>@spec.Value</p>
+			</div>
+		}
+	</div>
+	<div class="reviews" id="reviews">
+		<h3>Opinie</h3>
+
+		<div class="all-reviews">
+			@for (int i = 0; i < 5; i++)
+			{
+				<div class="review">
+					<img class="user-icon" src="Images\SvgIcons\user-icon.svg" />
+					<span class="review-author">Jan Kowalski</span>
+					<div class="review-rating">
+						Ocena
+						<img class="star" src="Images\SvgIcons\star.svg" />
+						<img class="star" src="Images\SvgIcons\star.svg" />
+						<img class="star" src="Images\SvgIcons\star.svg" />
+						<img class="star" src="Images\SvgIcons\star.svg" />
+						<img class="star" src="Images\SvgIcons\star.svg" />
+					</div>
+					<div class="review-text">
+						<p>Nunc sed ipsum scelerisque, dignissim nulla nec, congue urna. Nullam ac orci cursus, lobortis nulla sed, dictum dolor. Etiam odio urna, mattis quis congue non, eleifend in urna. Cras eu erat sagittis, accumsan odio in, rhoncus diam. </p>
+					</div>
+				</div>
+			}
+		</div>
+	</div>
+</div>
+
+
+
+@code {
+	[Parameter]
+	public int Id { get; set; }
+
+	public ProductCardInfo productCardInfo { get; set; } = new ProductCardInfo();
+	private List<ProductCardInfo> Products = new List<ProductCardInfo>();
+	private string? productImageUrl;
+
+	private void setCurrentImage(string imageUrl)
+	{
+		productImageUrl = imageUrl;
+	}
+
+	protected override async Task OnInitializedAsync()
+	{
+		try
+		{
+			Console.WriteLine("Fetching products from JSON file...");
+			var fetchedProducts = await Http.GetFromJsonAsync<List<ProductCardInfo>>(
+				$"data/ProductCardInfo.json?nocache={Guid.NewGuid()}"
+			);
+
+			if (fetchedProducts != null)
+			{
+				Console.WriteLine($"Fetched {fetchedProducts.Count} products.");
+				Products = fetchedProducts;
+
+				productCardInfo = Products.FirstOrDefault(p => p.Id == Id) ?? new ProductCardInfo();
+				productImageUrl = productCardInfo.ImageUrl;
+
+			}
+		}
+		catch (Exception e)
+		{
+			Console.WriteLine($"Error fetching products: {e.Message}");
+		}
+	}
+
+
+	private async Task ScrollToSpecification()
+	{
+		await JS.InvokeVoidAsync("scrollToElement", "specification");
+	}
+
+	private async Task ScrollToReview()
+	{
+		await JS.InvokeVoidAsync("scrollToElement", "reviews");
+	}
+
+	private async Task ScrollToDescription()
+	{
+		await JS.InvokeVoidAsync("scrollToElement", "description");
+	}
+
+
+}

@@ -1,4 +1,6 @@
-﻿<div class="product-card">
+﻿@inject NavigationManager Navigation
+
+<div class="product-card" @onclick="() => OnClick()">
     <img src="@Product.ImageUrl" alt="@Product.Title"/>
     <div class="product-card-info">
         <h3>@Product.Title</h3>
@@ -16,4 +18,9 @@
 @code {
     [Parameter] 
     public ProductCardInfo Product { get; set; } = new ProductCardInfo();
+
+    private void OnClick()
+    {
+        Navigation.NavigateTo($"/product/{Product.Id}");
+	}
 }
