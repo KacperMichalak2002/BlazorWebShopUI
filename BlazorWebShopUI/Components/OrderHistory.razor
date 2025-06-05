@@ -1,0 +1,27 @@
+﻿<div class="order-main">
+	<div class="order-images">
+		@foreach(var imageUrl in imagesUrl)
+		{
+			<img src="@imageUrl" />
+		}
+	</div>
+	<div class="order-status">
+		<h4>Status:</h4>
+		<p>W trakcie przygotowania</p>
+	</div>
+	<div class="order-date">
+		<h4>Data złożenia zamówienia</h4>
+		<p>@date</p>
+	</div>
+	<div class="order-toral">
+		<h4>Kwota:</h4>
+		<p>@totalPrice</p>
+	</div>
+</div>
+
+@code {
+	[Parameter] public List<String> imagesUrl { get; set; } = new List<string>();
+	[Parameter] public float totalPrice { get; set; }
+	[Parameter] public String date { get; set; } = string.Empty;
+
+}

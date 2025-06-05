@@ -66,44 +66,16 @@
 	
 	<div class="order-history-container">
 		<h3>Historia Zamówień</h3>
-		<div class="order-main">
-			<div class="order-images">
-				<img src="@imageUrl" />
-				<img src="@imageUrl" />
-				<img src="@imageUrl" />
-			</div>
-			<div class="order-status">
-				<h4>Status:</h4>
-				<p>W trakcie przygotowania</p>
-			</div>
-			<div class="order-date">
-				<h4>Data złożenia zamówienia</h4>
-				<p>14.04.2025</p>
-			</div>
-			<div class="order-toral">
-				<h4>Kwota:</h4>
-				<p>@totalPrice</p>
-			</div>
-		</div>
-		<div class="order-main">
-			<div class="order-images">
-				<img src="@imageUrl" />
-				<img src="@imageUrl" />
-				<img src="@imageUrl" />
-			</div>
-			<div class="order-status">
-				<h4>Status:</h4>
-				<p>W trakcie przygotowania</p>
-			</div>
-			<div class="order-date">
-				<h4>Data złożenia zamówienia</h4>
-				<p>14.04.2025</p>
-			</div>
-			<div class="order-toral">
-				<h4>Kwota:</h4>
-				<p>@totalPrice</p>
-			</div>
-		</div>
+		@if(orderHistory != null)
+		{
+			@foreach(var order in orderHistory)
+			{
+				<OrderHistory imagesUrl="@order.imagesUrl"
+							  totalPrice="@order.totalPrice"
+							  date="@order.date"/>
+			}
+		}
+
 	</div>
 
 </div>
@@ -113,12 +85,12 @@
 	public UserData userData = new UserData();
 	bool isUpdating = false;
 
-	private string imageUrl = "Images/google_pixel_9_pro_16_265GB.png";
-	private string totalPrice = "1234,56 zł";
+	private List<HistoryOrderBody> orderHistory = new List<HistoryOrderBody>();
 
 	protected async override Task OnInitializedAsync()
 	{
 		userData = await localStorage.GetItemAsync<UserData>("userData") ?? new UserData();
+		orderHistory = await localStorage.GetItemAsync<List<HistoryOrderBody>>("orderHistory") ?? new List<HistoryOrderBody>();
 		Console.WriteLine(userData.firstName);
 	}
 

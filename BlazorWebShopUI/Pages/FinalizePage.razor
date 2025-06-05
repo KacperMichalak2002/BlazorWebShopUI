@@ -1,5 +1,7 @@
 ﻿@page "/finalize/{totalCost:float}"
-@inject Blazored.LocalStorage.ILocalStorageService LocalStorage;
+@inject Blazored.LocalStorage.ILocalStorageService LocalStorage
+@inject NavigationManager Navigation
+@inject HttpClient Http
 
 <div class="page-container">
 	<h3>Dostawa i płatność</h3>
@@ -90,11 +92,46 @@
 	private float finalPrice => basePrice + 
 	(DeliverPrices.ContainsKey(finalizeOrder.deliveryCompany) ? DeliverPrices[finalizeOrder.deliveryCompany] : 0);
 
+	private List<CarItemModel> cartItems = new List<CarItemModel>();
+	private List<ProductCardInfo> products = new List<ProductCardInfo>();
+
+	private List<HistoryOrderBody> history = new List<HistoryOrderBody>();
+	private HistoryOrderBody orderToAdd = new HistoryOrderBody();
 
 	private  async Task SaveOrder()
 	{
+		var savedHistory = await LocalStorage.GetItemAsync<List<HistoryOrderBody>>("orderHistory") ?? new List<HistoryOrderBody>();
+
+		foreach (var cartItem in cartItems)
+		{
+			var prod = products.FirstOrDefault(prod => prod.Id == cartItem.Id);
+
+			if (prod != null)
+			{
+				orderToAdd.imagesUrl.Add(prod.ImageUrl);
+				orderToAdd.totalPrice = finalPrice;
+			}
+		}
+
+		if(savedHistory != null)
+			savedHistory.Add(orderToAdd);
+
+		await LocalStorage.SetItemAsync<List<HistoryOrderBody>>("orderHistory", savedHistory);
+		await LocalStorage.SetItemAsync<List<CarItemModel>>("cartItems", new List<CarItemModel>());
+		Navigation.NavigateTo("/");
+	}
+
+
+	protected async override Task OnInitializedAsync()
+	{
+
+		cartItems = await LocalStorage.GetItemAsync<List<CarItemModel>>("cartItems") ?? new List<CarItemModel>();
+
+		products = await Http.GetFromJsonAsync<List<ProductCardInfo>>
+		($"data/ProductCardInfo.json?nocache={Guid.NewGuid()}") ?? new List<ProductCardInfo>();
 
 	}
+
 
 	protected override async Task OnParametersSetAsync()
 	{
@@ -107,7 +144,6 @@
 		finalizeOrder.userData =  await LocalStorage.GetItemAsync<UserData>("userData") ?? new UserData();
 	}
 
-	
 	private Dictionary<DeliveryCompany, float> DeliverPrices = new()
 	{
 		{ DeliveryCompany.FedEx, 14.99f },
