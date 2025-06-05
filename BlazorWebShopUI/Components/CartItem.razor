@@ -2,7 +2,7 @@
 <div class="cart-item">
 	<img src="@ImageUrl" alt="Product Image" class="cart-item-image" />
 	<p>@cartItemName</p>
-	<p><input type="number" class="cart-item-quantity" min="1" @bind="amount" /> Ilość</p>
+	<p><input type="number" class="cart-item-quantity" min="1" max="10" @bind="amount" @onfocusout="changeAmount"/> Ilość</p>
 	<p>@cartItemPrice zł</p>
 	<button class="del-btn" @onclick="() => deleteFromCart()"><img src="@trashIconUrl" /></button>
 </div>
@@ -15,6 +15,7 @@
 	[Parameter] public int amount { get; set; } = 1;
 	[Parameter] public int prodId { get; set; }
 	[Parameter] public EventCallback OnItemDeleted { get; set; }
+	[Parameter] public EventCallback OnAmountChanged { get; set; }
 
 	private async Task deleteFromCart()
 	{
@@ -27,6 +28,23 @@
 			if(prodToDelete != null)
 			{
 				productsInCart.Remove(prodToDelete);
+				await LocalStorage.SetItemAsync<List<CarItemModel>>("cartItems", productsInCart);
+				await OnItemDeleted.InvokeAsync();
+			}
+		}
+	}
+
+	private async Task changeAmount()
+	{
+		var productsInCart = await LocalStorage.GetItemAsync<List<CarItemModel>>("cartItems");
+
+		if (productsInCart != null)
+		{
+			var productToUpdate = productsInCart.FirstOrDefault(prod => prod.Id == prodId);
+
+			if (productToUpdate != null)
+			{
+				productToUpdate.amount = amount;
 				await LocalStorage.SetItemAsync<List<CarItemModel>>("cartItems", productsInCart);
 				await OnItemDeleted.InvokeAsync();
 			}

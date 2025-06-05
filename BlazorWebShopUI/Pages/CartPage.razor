@@ -16,7 +16,8 @@
 						  cartItemPrice="@prodToDisplay.cartItemPrice"
 						  amount="@prodToDisplay.amount"
 						  prodId="@prodToDisplay.id"
-						  OnItemDeleted="RefreshCartAsync"/>
+						  OnItemDeleted="RefreshCartAsync"
+						  OnAmountChanged="OnAmountChanged" />
 			}
 			
 		</div>
@@ -37,6 +38,12 @@
 	private List<CarItemModel> cartItems = new List<CarItemModel>();
 	private List<ProductCardInfo> products = new List<ProductCardInfo>();
 	private List<CartItemToDisplay> cartProductsToDisplay = new List<CartItemToDisplay>();
+
+	private async Task OnAmountChanged()
+	{
+		await RefreshCartAsync();
+		calculateTotal();
+	}
 
 	private async Task RefreshCartAsync()
 	{
@@ -104,13 +111,4 @@
 		}
 	}
 
-
-	public class CartItemToDisplay
-	{
-		public string ImageUrl { get; set; } = string.Empty;
-		public string cartItemName { get; set; } = string.Empty;
-		public float cartItemPrice { get; set; }
-		public int amount { get; set; }
-		public int id { get; set; }
-	}
 }
