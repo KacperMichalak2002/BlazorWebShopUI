@@ -1,4 +1,5 @@
 ﻿@page "/product/{id:int}"
+@inject NavigationManager Navigation
 @inject Blazored.LocalStorage.ILocalStorageService LocalStorage
 @inject HttpClient Http
 @inject IJSRuntime JS;
@@ -36,8 +37,22 @@
 		<div class="add-to-card">
 			<p>@productCardInfo.Price zł</p>
 			<p><input type="number" min="1" max="10" class="quantity-input" @bind="amount" /> Ilość</p>
-			<button class="add-to-card-btn" @onclick="() => AddToCart(productCardInfo)">Dodaj do koszyka</button>
-			<button class="buy-now-btn">Kup teraz</button>
+			<button class="add-to-card-btn" @onclick="() => AddToCart(productCardInfo)">
+				@if (isAdded)
+				{
+					<div class="notification-top">
+						<p>🛒 Produkt został dodany do koszyka</p>
+					</div>
+					<span>Dodaj do koszyka</span>
+				}
+
+				else
+				{
+					<span>Dodaj do koszyka</span>
+				}
+
+			</button>
+			<button class="buy-now-btn" @onclick="() =>BuyNow(productCardInfo)" >Kup Teraz</button>
 		</div>
 	</div>
 	<div class="controls">
@@ -105,6 +120,7 @@
 	private List<CarItemModel> CartItems = new List<CarItemModel>();
 	private int amount = 1;
 	private string? productImageUrl;
+	private bool isAdded = false;
 
 	private async Task AddToCart(ProductCardInfo product)
 	{
@@ -128,6 +144,23 @@
 			CartItems.Add(itemToAdd);
 			await SaveCartItems(CartItems);
 		}
+
+		if (!isAdded)
+		{
+			isAdded = true;
+			StateHasChanged();
+			await Task.Delay(2000);
+			isAdded = false;
+			StateHasChanged();
+		}
+
+	}
+
+	private async Task BuyNow(ProductCardInfo product)
+	{
+		isAdded = true;
+		await AddToCart(product);
+		Navigation.NavigateTo("/cart");
 	}
 
 	private async Task SaveCartItems(List<CarItemModel> cartItems)

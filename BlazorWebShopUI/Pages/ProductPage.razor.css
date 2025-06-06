@@ -7,6 +7,7 @@
 .main {
     display: flex;
     flex-direction: row;
+    justify-content:center;
     width:100%;
     gap: 20px;
 }
@@ -188,8 +189,7 @@
         text-align: center;
     }
 
-.reviews {
-    width: 98%;
+.reviews {;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -251,3 +251,39 @@
 
     .review-text {
     }
+
+.notification-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #9540B9;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    font-size: 1.1rem;
+    z-index: 1000;
+    animation: slideDownUp 2.0s ease-in-out forwards;
+}
+
+@keyframes slideDownUp {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    10% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    90% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+}
