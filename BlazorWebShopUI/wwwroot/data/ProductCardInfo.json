@@ -114,5 +114,391 @@
     ],
     "price": 4099.00,
     "imageUrl": "Images/google_pixel_9_pro_16_265GB.png"
+  },
+  {
+    "id": 6,
+    "title": "LG UltraGear 27GN800-B QHD IPS 144Hz",
+    "category": [ "Monitory", "Monitory OLED", "27 cali" ],
+    "description": [
+      "Rozmiar: 27 cale",
+      "Częstotliwość odświeżania: 144Hz",
+      "Matryca: IPS",
+      "Porty: HDMI, DisplayPort"
+    ],
+    "specification": {
+      "Przekatna": "27",
+      "Producent": "LG",
+      "Rodzaj matrycy": "IPS",
+      "Czestotliwosc odswiezania": "144Hz"
+    },
+    "price": 849.00,
+    "imageUrl": "Images/lg_ultragear_27.png",
+    "images": [
+      "Images/lg_ultragear_27.png"
+    ]
+  },
+  {
+    "id": 7,
+    "title": "ASUS VivoBook 15.6'' i5/16GB/512GB SSD",
+    "category": [
+      "Laptopy",
+      "Acer",
+      "15.6 cala",
+      "Laptopy biznesowe",
+      "Do pracy biurowej"
+    ],
+    "description": [
+      "Ekran: 15.6 cala",
+      "Procesor: Intel Core i5",
+      "Pamięć RAM: 16GB",
+      "Dysk: 512GB SSD"
+    ],
+    "specification": {
+      "Producent": "Asus",
+      "Przekatna ekranu": "13.3\"-15.6\"",
+      "Pamiec RAM": "16GB",
+      "Pamiec wewnetrzna": "512GB SSD"
+    },
+    "price": 2699.00,
+    "imageUrl": "Images/asus_vivobook_15.png"
+  },
+  {
+    "id": 8,
+    "title": "HP Omen 45L i7/32GB/1TB SSD RTX 4070",
+    "category": [
+      "Komputery",
+      "Komputery stacjonarne",
+      "Do gier"
+    ],
+    "description": [
+      "Procesor: Intel Core i7",
+      "Pamięć RAM: 32GB",
+      "Dysk: 1TB SSD",
+      "Karta graficzna: NVIDIA RTX 4070"
+    ],
+    "specification": {
+      "Producent": "HP",
+      "Gniazdo procesora": "LGA 1700",
+      "Procesor": "Intel Core i7",
+      "Liczba rdzeni procesora": "24",
+      "Pamiec RAM": "32GB",
+      "Technologia pamieci RAM": "DDR4 SDRAM",
+      "Predkosc taktowania RAM": "5200 MHz",
+      "Pojemnosc dysku": "2000 GB",
+      "Typ dysku": "SSD",
+      "Interfejs dysku": "Stan staly",
+      "Karta graficzna": "NVIDIA GeForce RTX 4070 Ti",
+      "Producent GPU": "NVIDIA",
+      "Typ karty graficznej": "Dedykowana",
+      "Typ pamieci GPU": "GDDR6X",
+      "Pamiec GPU": "12 GB",
+      "Interfejs GPU": "PCI Express",
+      "Technologia bezprzewodowa": "802.11ax, Bluetooth",
+      "Porty USB 2.0": "4",
+      "Porty USB 3.0": "6",
+      "Porty HDMI": "1",
+      "Naped optyczny": "Brak",
+      "System operacyjny": "Windows 11 Home",
+      "Zasilacz": "Nie dotyczy"
+    },
+    "price": 6799.00,
+    "imageUrl": "Images/hp_omen_45l.png"
+  },
+  {
+    "id": 9,
+    "title": "Samsung 980 PRO 1TB NVMe SSD",
+    "category": [
+      "Podzespoły komputerowe",
+      "Dyski twarde",
+      "SSD"
+    ],
+    "description": [
+      "Typ: Dysk SSD",
+      "Pojemność: 1TB",
+      "Interfejs: PCIe Gen4 x4 NVMe"
+    ],
+    "specification": {
+      "Producent": "Samsung",
+      "Pojemnosc": "1000 GB",
+      "Format": "M.2",
+      "Interfejs": "PCIe NVMe 4.0 x4",
+      "Predkosc odczytu": "7000 MB/s",
+      "Predkosc zapisu": "5000 MB/s",
+      "Odczyt losowy": "1000000 IOPS",
+      "Zapis losowy": "1000000 IOPS",
+      "Rodzaj kosci pamieci": "TLC",
+      "Niezawodnosc MTBF": "1500000 godz",
+      "Radiator": "Nie",
+      "Technologia SMART": "Tak",
+      "Technologia TRIM": "Tak",
+      "Szyfrowanie AES": "256-bit",
+      "Kolor": "Czarny",
+      "Wysokosc": "2.4 mm",
+      "Szerokosc": "22 mm",
+      "Glebokosc": "80 mm"
+    },
+    "price": 529.00,
+    "imageUrl": "Images/samsung_980_pro_1tb.png"
+  },
+  {
+    "id": 10,
+    "title": "Apple iPhone 14 128GB Midnight",
+    "category": [
+      "Smartfony",
+      "Apple",
+      "Do fotografii"
+    ],
+    "description": [
+      "Ekran: 6.1 cala",
+      "Procesor: Apple A15 Bionic",
+      "Pamięć RAM: 6GB",
+      "Pamięć wbudowana: 128GB"
+    ],
+    "specification": {
+      "Producent": "Apple",
+      "Przekatna ekranu": ">6.0\"",
+      "Pamiec wewnetrzna": "128GB",
+      "System operacyjny": "iOS"
+    },
+    "price": 4399.00,
+    "imageUrl": "Images/iphone_14_128.png"
+  },
+  {
+    "id": 11,
+    "title": "Samsung Galaxy Tab S9 11\" 256GB Wi-Fi",
+    "category": [
+      "Tablety",
+      "Samsung",
+      "Do rozrywki"
+    ],
+    "description": [
+      "Ekran: 11 cali AMOLED",
+      "Pamięć wbudowana: 256GB",
+      "Pamięć RAM: 12GB",
+      "System: Android",
+      "Zastosowanie: Do rozrywki, multimedia"
+    ],
+    "specification": {
+      "Producent": "Samsung",
+      "Procesor": "Qualcomm Snapdragon 8 gen 2 (1x 3.36 GHz, X3 + 4x 2.8 GHz, A71 + 3x 2.0 GHz, A51)",
+      "Pamiec RAM": "12 GB",
+      "Pamiec wbudowana": "256 GB",
+      "Czytnik linii papilarnych": "W ekranie",
+      "Typ ekranu": "Dotykowy, Dynamic AMOLED 2X",
+      "Czestotliwosc odswiezania ekranu": "120 Hz",
+      "Przekatna ekranu": "11\"",
+      "Rozdzielczosc ekranu": "2560 x 1600",
+      "Lacznosc Wi-Fi": "Wi-Fi 6 (802.11 a/b/g/n/ac/ax)",
+      "Bluetooth": "Tak",
+      "Nawigacja satelitarna": "GPS, BeiDou, GLONASS, Galileo, QZSS",
+      "Czujniki": "Akcelerometr, Czujnik Halla, Czujnik swiatla, Kompas, Zyroskop",
+      "Zlacza": "USB Type-C - 1 szt., Czytnik kart pamieci - 1 szt.",
+      "Bateria": "Litowo-jonowa 8400 mAh",
+      "System operacyjny": "Android 13",
+      "Aparat przedni": "12.0 Mpix",
+      "Aparat tylny": "13.0 Mpix",
+      "Rozdzielczosc nagrywania wideo": "4K (3840 x 2160)",
+      "Moc ladowania": "max. 45 W",
+      "Glosniki": "Wbudowane cztery glosniki stereo",
+      "Mikrofony": "Wbudowane trzy mikrofony",
+      "Odpornosc": "Pyloszczelnosc i wodoszczelnosc (IP68)",
+      "Material obudowy": "Metalowa obudowa",
+      "Dolaczone akcesoria": "Rysik, Kabel USB Typu-C",
+      "Kolor": "Szary",
+      "Wymiary": "254 mm x 166 mm x 6 mm",
+      "Waga": "498 g"
+    },
+    "price": 3799.00,
+    "imageUrl": "Images/samsung_tab_s9_256.png"
+  },
+  {
+    "id": 12,
+    "title": "Apple Watch Series 9 GPS 45mm Midnight",
+    "category": [
+      "Smartwatche",
+      "Apple",
+      "Monitorowanie zdrowia"
+    ],
+    "description": [
+      "Wyświetlacz: 1.9 cala Retina",
+      "System operacyjny: watchOS",
+      "Funkcje: Pulsoksymetr, EKG, monitor snu",
+      "Zastosowanie: Monitorowanie zdrowia, sport, codzienne użytki"
+    ],
+    "specification": {
+      "Producent": "Apple",
+      "Procesor": "Apple S9",
+      "Typ wyswietlacza": "OLED, LTPO, Retina",
+      "Lacznosc WiFi": "Tak",
+      "Lacznosc Bluetooth": "Tak",
+      "Lacznosc NFC": "Tak",
+      "Nawigacja satelitarna": "Tak",
+      "System operacyjny": "watchOS 10",
+      "Czujniki": "Akcelerometr, Wysokosciomierz barometryczny, Elektrokardiogram (EKG), Echokardiogram (ECG), Kompas, Pulsoksymetr (SpO2), Pulsometr, Swiatla, Zyroskop, Czujnik ruchu",
+      "Rodzaje aktywnosci": "Tryb wielodyscyplinowy",
+      "Funkcje informacyjne": "Alarm dzwiekowy, Alarm wibracyjny, Budzik, Emotikony, Kalendarz, Mapy i nawigacja, Prognoza pogody, Stoper, Timer",
+      "Funkcje telefoniczne": "Dostep do kontaktow, Odbieranie i odrzucanie polaczen, Konczenie polaczen, Pisanie wiadomosci, Podglad wiadomosci, Powiadomienia o polaczeniach SMS e-mail, Rozmowy glosowe",
+      "Funkcje sledzenia aktywnosci": "Automatyczne wykrywanie czasu odpoczynku, Krokomierz, Licznik spalonych kalorii, Monitorowanie snu, Monitorowanie tetna, Plany treningowe, Pomiar czasu aktywnosci, Pomiar dystansu, Pomiar predkosci, Pomiar tempa, Pomiar wydajnosci i obciazenia organizmu, Powiadomienia o braku aktywnosci, Raporty z treningu",
+      "Funkcje biegowe": "Czas kontaktu z podlozem, Dlugosc kroku, Dynamika biegu, Kadencja biegu, Przygotowanie wydolnosciowe, Treningi biegowe",
+      "Funkcje rowerowe": "Treningi rowerowe",
+      "Funkcje plywackie": "Dlugosc basenu, Treningi plywackie",
+      "Funkcje fitness i silownia": "Automatyczne liczenie powtorzen, Treningi silowe, Treningi wydolnosciowe",
+      "Funkcje multimedialne": "Funkcja zestawu glosnomowiacego, Rozpoznawanie mowy, Samodzielny odtwarzacz MP3, Sterowanie aparatem, Sterowanie odtwarzaczem",
+      "Pozostale funkcje": "Funkcja SOS, Latarka, Platnosci zblizeniowe",
+      "Budowa i wykonanie": "Ceramiczny tyl koperty, Koperta aluminiowa, Szklo Ion-X, Materialowy pasek, Wymienne paski, Wbudowany glosnik, Wbudowany mikrofon",
+      "Odpornosc": "Odpornosc na wstrzasy, Pyloszczelnosc, Wodoszczelnosc, Wodoszczelnosc 5 ATM",
+      "Czas pracy na baterii normalny": "do 18 godzin",
+      "Czas pracy na baterii oszczedny": "do 36 godzin",
+      "Typ paska": "Pasek sportowy",
+      "Kolor paska": "Midnight",
+      "Kolor koperty": "Midnight",
+      "Kompatybilnosc system": "iOS 17.0 lub nowszy",
+      "Kompatybilnosc modele": "Apple iPhone Xs lub nowszy",
+      "Dodatkowe informacje": "Bezprzewodowe ladowanie, Dotykowy Digital Crown, Bezprzewodowa synchronizacja, Integracja z aplikacja mobilna, Mozliwosc indywidualnego dostosowania wygladu tarczy zegarka",
+      "Dolaczone akcesoria": "Kabel ladujacy"
+    },
+    "price": 2299.00,
+    "imageUrl": "Images/apple_watch_series9.png"
+  },
+  {
+    "id": 13,
+    "title": "JBL Charge 5 Głośnik Bluetooth Czarny",
+    "category": [
+      "Audio",
+      "Głośniki",
+      "Bluetooth"
+    ],
+    "description": [
+      "Typ: Głośnik",
+      "Łączność: Bluetooth 5.1",
+      "Czas pracy: do 20h",
+      "Odporność: IP67 (wodoodporność, pyłoszczelność)"
+    ],
+    "specification": {
+      "Producent": "JBL",
+      "Popularna seria": "Charge 5",
+      "Moc": "40 W",
+      "Czas ladowania": "4 h",
+      "Czas pracy na akumulatorze": "20 h",
+      "Zasilanie": "Akumulatorowe",
+      "Zalacznosc Bluetooth": "Tak",
+      "Zalacznosc NFC": "Nie",
+      "Zalacznosc Wi-Fi": "Nie",
+      "Zalacznosc AirPlay": "Nie",
+      "Zlacza": "USB, USB-C",
+      "Wodoszczelnosc": "Tak",
+      "Odpornosc na zachlapanie": "Tak",
+      "Certyfikat": "IP67",
+      "Odpornosc na kurz i pyl": "Tak",
+      "Funkcje dodatkowe": "PowerBank, Party Booster",
+      "Asystent glosowy": "Nie",
+      "Google Assistant": "Nie",
+      "Kolor": "Czarny",
+      "Wysokosc": "96.5 mm",
+      "Szerokosc": "223 mm",
+      "Glebokosc": "94 mm",
+      "Waga": "960 g",
+      "Wyposazenie": "Kabel USB Typu C",
+      "Zgodnosc z urzadzeniami": "Urzadzenia z Bluetooth"
+    },
+    "price": 699.00,
+    "imageUrl": "Images/jbl_charge_5.png"
+  },
+  {
+    "id": 14,
+    "title": "Logitech G502 HERO Mysz Gamingowa",
+    "category": [
+      "Akcesoria",
+      "Myszki",
+      "PC"
+    ],
+    "description": [
+      "Typ: Mysz przewodowa",
+      "Sensor: HERO 25K DPI",
+      "Przyciski: 11 programowalnych",
+      "Kompatybilność: PC, Mac"
+    ],
+    "specification": {
+      "Producent": "Logitech",
+      "Typ myszy": "Dla graczy",
+      "Lacznosc": "Przewodowa",
+      "Sensor": "Optyczny",
+      "Rozdzielczosc": "25600 dpi",
+      "Liczba przyciskow": "11",
+      "Rolka przewijania": "1",
+      "Interfejs": "USB",
+      "Dlugosc przewodu": "2.1 m",
+      "Profil": "Praworeczny",
+      "Podswietlenie": "Podswietlane logo",
+      "Antypozlizgowe panele boczne": "Tak",
+      "Przelaczniki mechaniczne": "Tak",
+      "Regulowany ciezar myszy": "Tak",
+      "Programowalne przyciski": "Tak",
+      "Profile ustawien": "Tak",
+      "Zywotnosc przelacznikow": "50 milionow klikniec",
+      "Czestotliwosc polingu": "1000 Hz Ultrapolling",
+      "Wbudowana pamiec": "Tak",
+      "Regulacja rozdzielczosci DPI": "Tak",
+      "Procesor": "32-bitowy procesor ARM",
+      "Dolaczone akcesoria": "Ciezarek 3.6 g - 5 szt.",
+      "Kolor": "Czarny",
+      "Dlugosc": "132 mm",
+      "Szerokosc": "75 mm",
+      "Wysokosc": "40 mm",
+      "Waga": "121 g"
+    },
+    "price": 269.00,
+    "imageUrl": "Images/logitech_g502.png"
+  },
+  {
+    "id": 15,
+    "title": "LG OLED55C31LA 55'' 4K OLED Smart TV",
+    "category": [
+      "Telewizory",
+      "Telewizory OLED",
+      "55 cali"
+    ],
+    "description": [
+      "Rozdzielczość: 4K UHD",
+      "Technologia: OLED evo",
+      "Rozmiar: 55 cali",
+      "System: webOS Smart TV"
+    ],
+    "specification": {
+      "Producent": "LG",
+      "Model": "OLED55C31",
+      "Seria": "LG C3",
+      "Przekatna ekranu": "55 cali",
+      "Rozdzielczosc": "3840x2160",
+      "Rodzaj matrycy": "OLED",
+      "Czestotliwosc odswiezania": "100Hz",
+      "HDR": "HDR 10",
+      "Tuner": "DVB-C",
+      "Kodowanie": "H.265/HEVC",
+      "Rodzaj ekranu": "Prosty",
+      "Smart TV": "WebOS",
+      "Funkcje Smart": "YouTube, Netflix, Amazon Prime",
+      "Komunikacja": "Bluetooth, Wi-Fi, HDMI 2.1, USB, Ethernet",
+      "HDMI": "4",
+      "USB": "3",
+      "DLNA": "Tak",
+      "Wyjscie optyczne": "Tak",
+      "Czytnik kart pamieci": "Nie",
+      "Klasa energetyczna HDR": "G",
+      "Klasa energetyczna SDR": "G",
+      "Zuzycie HDR": "143 kWh",
+      "Zuzycie SDR": "81 kWh",
+      "Pobor mocy": "81 W",
+      "Pobor czuwania": "0.5 W",
+      "Napiecie": "110 - 240 V",
+      "Waga bez podstawy": "14 kg",
+      "Waga z podstawa": "16 kg",
+      "Wymiary bez podstawy": "122.2 x 70.3 x 4.5 cm",
+      "Wymiary z podstawa": "122.2 x 75.7 x 23 cm",
+      "Standard VESA": "300x300"
+    },
+    "price": 6399.00,
+    "imageUrl": "Images/lg_oled_55.png"
   }
+
 ]
