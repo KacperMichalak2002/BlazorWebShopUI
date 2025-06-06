@@ -96,8 +96,7 @@
     ],
     "price": 4099.00,
     "imageUrl": "Images/google_pixel_9_pro_16_265GB.png"
-  }
-  ,
+  },
   {
     "id": 5,
     "title": "Google Pixel 9 Pro 5G 16/256GB Czarny",
@@ -499,6 +498,698 @@
     },
     "price": 6399.00,
     "imageUrl": "Images/lg_oled_55.png"
+  },
+  {
+    "id": 16,
+    "title": "HP EliteDesk 800 G6 Mini PC",
+    "category": [
+      "Komputery",
+      "Komputery stacjonarne",
+      "Do pracy biurowej"
+    ],
+    "description": [
+      "Procesor: Intel Core i5-10500T",
+      "RAM: 16GB DDR4",
+      "Dysk: 512GB SSD",
+      "System: Windows 11 Pro"
+    ],
+    "specification": {
+      "Producent": "HP",
+      "Model": "Mini PC",
+      "Procesor": "INTEL Core i5 10500T 2,3 GHz",
+      "Generacja procesora": "Dziesiąta generacja",
+      "Liczba rdzeni procesora": "6",
+      "Płyta główna": "Q470",
+      "Typ pamięci operacyjnej": "DDR4 SODIMM",
+      "Pamięć operacyjna": "8 GB",
+      "Typ dysku": "SSD",
+      "Dysk twardy": "480 GB",
+      "Rodzaj karty graficznej": "Zintegrowana",
+      "Karta graficzna": "Intel UHD Graphics 630",
+      "Karta dźwiękowa": "Realtek ALC3867",
+      "Karta sieciowa": "Przewodowa, 10/100/1000 Mb/s",
+      "Napęd optyczny": "brak",
+      "DisplayPort": "2 x DisplayPort 1.4",
+      "USB Typu C": "1 x USB Typu C",
+      "USB 3.1 Gen 1": "3 x USB 3.1 Gen 1",
+      "USB 3.1 Gen 2": "3 x USB 3.1 Gen 2",
+      "RJ-45": "1 x RJ-45",
+      "Audio": "2 x Audio",
+      "Wymiary": "177 x 175 x 34 mm",
+      "Waga": "1,4 kg",
+      "Typ obudowy": "Mini PC"
+    },
+    "price": 1599.00,
+    "imageUrl": "Images/hp_elitedesk.png"
+  },
+  {
+    "id": 18,
+    "title": "AMD Ryzen 7 5800X Procesor",
+    "category": [
+      "Podzespoły komputerowe",
+      "Procesory",
+      "AMD"
+    ],
+    "description": [
+      "Rdzenie: 8",
+      "Wątki: 16",
+      "Bazowe taktowanie: 3.8 GHz",
+      "Socket: AM4"
+    ],
+    "specification": {
+      "Producent": "AMD",
+      "Rodzina procesorów": "AMD Ryzen™",
+      "Seria procesora": "Ryzen™ 7 5800X",
+      "Gniazdo procesora (socket)": "Socket AM4",
+      "Obsługiwany chipset": "A520, B450, B550, X470, X570",
+      "Rekomendowany chipset": "B550",
+      "Architektura": "Zen 3",
+      "Taktowanie rdzenia": "3.8 GHz (4.7 GHz w trybie turbo)",
+      "Liczba rdzeni fizycznych": "8 rdzeni",
+      "Liczba wątków": "16 wątków",
+      "Odblokowany mnożnik": "Tak",
+      "Pamięć podręczna": "36 MB",
+      "Zintegrowany układ graficzny": "Nie",
+      "Model układu graficznego": "Brak",
+      "Rodzaj obsługiwanej pamięci": "DDR4-3200 (PC4-25600)",
+      "Proces litograficzny": "7 nm",
+      "Pobór mocy (TDP)": "105 W",
+      "Dodatkowe informacje": "Wersja BOX",
+      "Chłodzenie w zestawie": "Nie"
+    },
+    "price": 620.00,
+    "imageUrl": "Images/amd_ryzen_5800x.png"
+  },
+  {
+    "id": 19,
+    "title": "Dell Alienware AW3423DWF 34'' OLED QD",
+    "category": [
+      "Monitory",
+      "Monitory OLED",
+      "32 cale"
+    ],
+    "description": [
+      "Rozdzielczość: 3440x1440",
+      "Technologia: OLED QD",
+      "Częstotliwość odświeżania: 165Hz",
+      "Złącza: HDMI, DisplayPort"
+    ],
+    "specification": {
+      "Producent": "Dell",
+      "Przekatna": "34",
+      "Rodzaj matrycy": "OLED",
+      "Czestotliwosc odswiezania": "165Hz"
+    },
+    "price": 2799.00,
+    "imageUrl": "Images/dell_aw34.png"
+  },
+  {
+    "id": 20,
+    "title": "Samsung Galaxy S24 Ultra 5G",
+    "category": [
+      "Smartfony",
+      "Samsung",
+      "Do fotografii"
+    ],
+    "description": [
+      "Ekran: 6.8'' QHD+ AMOLED",
+      "Aparat: 200MP + 50MP + 10MP + 12MP",
+      "Pamięć: 256GB",
+      "System: Android 14"
+    ],
+    "specification": {
+      "Producent": "Samsung",
+      "Przekatna ekranu": ">6.0\"",
+      "Pamiec wewnetrzna": "256GB",
+      "System operacyjny": "Android"
+    },
+    "price": 6999.00,
+    "imageUrl": "Images/s24_ultra.png"
+  },
+  {
+    "id": 21,
+    "title": "SteelSeries Apex Pro TKL Klawiatura Mechaniczna",
+    "category": [
+      "Akcesoria",
+      "Klawiatury",
+      "PC"
+    ],
+    "description": [
+      "Typ: Klawiatura mechaniczna",
+      "Przełączniki: OmniPoint 2.0",
+      "Podświetlenie: RGB",
+      "Łączność: USB"
+    ],
+    "specification": {
+      "Producent": "SteelSeries",
+      "Typ": "Klawiatura",
+      "Kompatybilność": "PC"
+    },
+    "price": 899.00,
+    "imageUrl": "Images/apex_pro_tkl.png"
+  },
+  {
+    "id": 22,
+    "title": "HP Pavilion 24-k0001nw Komputer AiO",
+    "category": [
+      "Komputery",
+      "Komputery stacjonarne",
+      "Do pracy biurowej"
+    ],
+    "description": [
+      "Procesor: Intel Core i5-10400T",
+      "RAM: 8GB DDR4",
+      "Dysk: 256GB SSD + 1TB HDD",
+      "Ekran: 23.8\" Full HD dotykowy"
+    ],
+    "specification": {
+      "Producent": "HP",
+      "Procesor": "Intel Core i5",
+      "Pamiec RAM": "8GB",
+      "Pamiec wewnetrzna": "256GB SSD",
+      "Typ procesora": "Intel Core i5-10400T",
+      "Grafika": "Intel UHD Graphics 630",
+      "System operacyjny": "Windows 11 Home",
+      "Ekran": "23.8 cala",
+      "Rozdzielczosc": "1920x1080",
+      "Pamiec dysku": "1TB HDD",
+      "Interfejsy": "USB 3.0, USB 2.0, HDMI, Ethernet",
+      "Siec bezprzewodowa": "Wi-Fi 802.11ac",
+      "Bluetooth": "Tak",
+      "Kamera": "HP Wide Vision HD",
+      "Audio": "Wbudowane głośniki",
+      "Kolor": "Biały",
+      "Waga": "5.8 kg"
+    },
+    "price": 2899.00,
+    "imageUrl": "Images/hp_pavilion_aio.png"
+  },
+  {
+    "id": 23,
+    "title": "Dell Inspiron 15 3000 Laptop Biznesowy",
+    "category": [
+      "Laptopy",
+      "Laptopy biznesowe",
+      "Do pracy biurowej"
+    ],
+    "description": [
+      "Procesor: Intel Core i3-1115G4",
+      "RAM: 4GB DDR4",
+      "Dysk: 256GB SSD",
+      "Ekran: 15.6\" HD"
+    ],
+    "specification": {
+      "Producent": "Dell",
+      "Przekatna ekranu": "13.3\"-15.6\"",
+      "Pamiec RAM": "4GB",
+      "Pamiec wewnetrzna": "256GB SSD",
+      "Procesor": "Intel Core i3",
+      "Typ procesora": "Intel Core i3-1115G4",
+      "Grafika": "Intel UHD Graphics",
+      "System operacyjny": "Windows 11 Home",
+      "Rozdzielczosc": "1366x768",
+      "Typ ekranu": "HD LED",
+      "Interfejsy": "USB 3.2, USB 2.0, HDMI, SD Card Reader",
+      "Siec bezprzewodowa": "Wi-Fi 802.11ac",
+      "Bluetooth": "Bluetooth 5.0",
+      "Kamera": "HD Webcam",
+      "Bateria": "3-cell 42WHr",
+      "Czas pracy": "do 7h",
+      "Kolor": "Carbon Black",
+      "Waga": "1.85 kg"
+    },
+    "price": 1899.00,
+    "imageUrl": "Images/dell_inspiron_15.png"
+  },
+  {
+    "id": 24,
+    "title": "Intel Core i7-13700K Procesor",
+    "category": [
+      "Podzespoły komputerowe",
+      "Procesory",
+      "Intel"
+    ],
+    "description": [
+      "Typ: Procesor desktop",
+      "Rdzenie: 16 (8P + 8E)",
+      "Taktowanie: 3.4 GHz",
+      "Socket: LGA 1700"
+    ],
+    "specification": {
+      "Producent": "Intel",
+      "Typ": "Procesor",
+      "Model": "Core i7-13700K",
+      "Socket": "LGA 1700",
+      "Rdzenie": "16",
+      "Watki": "24",
+      "Taktowanie bazowe": "3.4 GHz",
+      "Taktowanie turbo": "5.4 GHz",
+      "Cache L3": "30 MB",
+      "TDP": "125 W",
+      "Grafika zintegrowana": "Intel UHD Graphics 770",
+      "Pamiec": "DDR4-3200, DDR5-5600",
+      "Architektura": "Raptor Lake",
+      "Litografia": "Intel 7",
+      "Overclocking": "Tak",
+      "Chlodzenie": "Nie dolaczone",
+      "Gwarancja": "3 lata"
+    },
+    "price": 1799.00,
+    "imageUrl": "Images/intel_i7_13700k.png"
+  },
+  {
+    "id": 25,
+    "title": "NVIDIA GeForce RTX 4070 SUPER",
+    "category": [
+      "Podzespoły komputerowe",
+      "Karty graficzne",
+      "NVIDIA"
+    ],
+    "description": [
+      "Typ: Karta graficzna",
+      "Pamięć: 12GB GDDR6X",
+      "Interfejs: PCIe 4.0",
+      "Ray Tracing: Tak"
+    ],
+    "specification": {
+      "Producent": "NVIDIA",
+      "Typ": "Karta graficzna",
+      "Model": "GeForce RTX 4070 SUPER",
+      "Pamiec": "12GB",
+      "Typ pamieci": "GDDR6X",
+      "Szerokosc magistrali": "192-bit",
+      "Rdzenie CUDA": "7168",
+      "Taktowanie bazowe": "1980 MHz",
+      "Taktowanie boost": "2475 MHz",
+      "Interfejs": "PCIe 4.0 x16",
+      "Wyjscia": "3x DisplayPort 1.4a, 1x HDMI 2.1",
+      "Maksymalna rozdzielczosc": "7680x4320",
+      "DirectX": "12 Ultimate",
+      "Ray Tracing": "RT Cores 3. generacji",
+      "DLSS": "3.0",
+      "TGP": "220W",
+      "Zasilanie": "1x 16-pin (12VHPWR)",
+      "Wymiary": "304 x 137 x 61 mm"
+    },
+    "price": 3299.00,
+    "imageUrl": "Images/rtx_4070_super.png"
+  },
+  {
+    "id": 26,
+    "title": "Samsung Odyssey G7 27'' 144Hz Gaming Monitor",
+    "category": [
+      "Monitory",
+      "27 cali",
+      "Monitory LED"
+    ],
+    "description": [
+      "Przekątna: 27 cali",
+      "Rozdzielczość: QHD 2560x1440",
+      "Częstotliwość: 144Hz",
+      "Panel: VA krzywizna 1000R"
+    ],
+    "specification": {
+      "Producent": "Samsung",
+      "Przekatna": "27",
+      "Rodzaj matrycy": "VA",
+      "Czestotliwosc odswiezania": "144Hz",
+      "Rozdzielczosc": "2560x1440",
+      "Format obrazu": "16:9",
+      "Czas reakcji": "1ms",
+      "Jasnosc": "350 cd/m²",
+      "Kontrast": "2500:1",
+      "Krzywizna": "1000R",
+      "HDR": "HDR10",
+      "FreeSync": "Tak",
+      "G-Sync": "G-Sync Compatible",
+      "Wejscia": "2x HDMI 2.0, 1x DisplayPort 1.4, 2x USB 3.0",
+      "Regulacja wysokosci": "Tak",
+      "Pivot": "Tak",
+      "VESA": "100x100",
+      "Pobor mocy": "45W",
+      "Kolor": "Czarny"
+    },
+    "price": 1499.00,
+    "imageUrl": "Images/samsung_odyssey_g7.png"
+  },
+  {
+    "id": 27,
+    "title": "Sony Bravia XR A80L 65'' OLED 4K Smart TV",
+    "category": [
+      "Telewizory",
+      "65 cali",
+      "Telewizory OLED"
+    ],
+    "description": [
+      "Rozdzielczość: 4K UHD",
+      "Technologia: OLED XR",
+      "Rozmiar: 65 cali",
+      "System: Google TV"
+    ],
+    "specification": {
+      "Producent": "Sony",
+      "Przekatna ekranu": ">55\"",
+      "Rodzaj matrycy": "OLED",
+      "Rozdzielczosc": "3840x2160",
+      "Model": "XR-65A80L",
+      "Procesor obrazu": "Cognitive Processor XR",
+      "HDR": "HDR10, Dolby Vision",
+      "Czestotliwosc odswiezania": "120Hz",
+      "Smart TV": "Google TV",
+      "Asystent glosowy": "Google Assistant",
+      "Komunikacja": "Wi-Fi 6, Bluetooth 4.2",
+      "HDMI": "4x HDMI 2.1",
+      "USB": "2x USB",
+      "Audio": "Acoustic Surface Audio+",
+      "Moc dzwieku": "50W",
+      "Klasa energetyczna": "G",
+      "Pobor mocy": "178W",
+      "Wymiary bez podstawy": "144.6 x 83.4 x 4.1 cm",
+      "Waga bez podstawy": "22.5 kg",
+      "Standard VESA": "300x300"
+    },
+    "price": 8999.00,
+    "imageUrl": "Images/sony_bravia_a80l.png"
+  },
+  {
+    "id": 28,
+    "title": "iPhone 15 Pro Max 256GB Natural Titanium",
+    "category": [
+      "Smartfony",
+      "Apple",
+      "Do fotografii"
+    ],
+    "description": [
+      "Ekran: 6.7'' Super Retina XDR",
+      "Procesor: A17 Pro",
+      "Pamięć: 256GB",
+      "Aparat: 48MP główny + telefoto + ultraszerokokątny"
+    ],
+    "specification": {
+      "Producent": "Apple",
+      "Przekatna ekranu": ">6.0\"",
+      "Pamiec wewnetrzna": "256GB",
+      "System operacyjny": "iOS",
+      "Model": "iPhone 15 Pro Max",
+      "Procesor": "Apple A17 Pro",
+      "Rozdzielczosc": "2796x1290",
+      "Typ ekranu": "Super Retina XDR OLED",
+      "Odswiezanie": "120Hz ProMotion",
+      "Aparat glowny": "48MP",
+      "Aparat dodatkowy": "12MP ultraszerokokatny, 12MP telefoto",
+      "Zoom optyczny": "5x",
+      "Nagrywanie wideo": "4K Dolby Vision",
+      "Aparat przedni": "12MP TrueDepth",
+      "Face ID": "Tak",
+      "5G": "Tak",
+      "Wi-Fi": "Wi-Fi 6E",
+      "Bluetooth": "5.3",
+      "USB-C": "Tak",
+      "Wodoszczelnosc": "IP68",
+      "Bateria": "do 29h odtwarzania wideo",
+      "Kolor": "Natural Titanium",
+      "Waga": "221g"
+    },
+    "price": 6499.00,
+    "imageUrl": "Images/iphone_15_pro_max.png"
+  },
+  {
+    "id": 29,
+    "title": "Samsung Galaxy Watch6 44mm Bluetooth",
+    "category": [
+      "Smartwatche",
+      "Samsung",
+      "Monitorowanie zdrowia"
+    ],
+    "description": [
+      "Rozmiar: 44mm",
+      "Ekran: 1.5'' Super AMOLED",
+      "System: Wear OS powered by Samsung",
+      "Funkcje zdrowotne: SpO2, EKG, analiza składu ciała"
+    ],
+    "specification": {
+      "Producent": "Samsung",
+      "Przekatna ekranu": "1.2\"-1.5\"",
+      "System operacyjny": "Wear OS",
+      "Model": "Galaxy Watch6",
+      "Rozmiar koperty": "44mm",
+      "Rozdzielczosc": "480x480",
+      "Typ ekranu": "Super AMOLED",
+      "Szklo": "Sapphire Crystal",
+      "Procesor": "Exynos W930",
+      "Pamiec RAM": "2GB",
+      "Pamiec wbudowana": "16GB",
+      "Lacznosc": "Bluetooth 5.3, Wi-Fi, NFC",
+      "GPS": "Tak",
+      "Czujniki": "Akcelerometr, Żyroskop, Barometr, SpO2, EKG",
+      "Analiza skladu ciala": "Tak",
+      "Monitorowanie snu": "Tak",
+      "Wodoszczelnosc": "5ATM + IP68",
+      "Bateria": "425mAh",
+      "Czas pracy": "do 40h",
+      "Ladowanie bezprzewodowe": "Tak",
+      "Pasek": "Sport Band"
+    },
+    "price": 1399.00,
+    "imageUrl": "Images/galaxy_watch6.png"
+  },
+  {
+    "id": 30,
+    "title": "iPad Air 11'' M2 Wi-Fi 128GB Space Gray",
+    "category": [
+      "Tablety",
+      "Apple",
+      "Do pracy"
+    ],
+    "description": [
+      "Ekran: 11'' Liquid Retina",
+      "Procesor: Apple M2",
+      "Pamięć: 128GB",
+      "Kompatybilność: Apple Pencil Pro, Magic Keyboard"
+    ],
+    "specification": {
+      "Producent": "Apple",
+      "Przekatna ekranu": ">10\"",
+      "Pamiec wewnetrzna": "128GB",
+      "System operacyjny": "iOS",
+      "Model": "iPad Air 11-inch",
+      "Procesor": "Apple M2",
+      "Rozdzielczosc": "2360x1640",
+      "Typ ekranu": "Liquid Retina IPS",
+      "Jasnosc": "500 nitów",
+      "True Tone": "Tak",
+      "Aparat tylny": "12MP Wide",
+      "Aparat przedni": "12MP Ultra Wide",
+      "Nagrywanie wideo": "4K",
+      "Face ID": "Tak, Touch ID",
+      "Wi-Fi": "Wi-Fi 6E",
+      "Bluetooth": "5.3",
+      "USB-C": "Tak",
+      "Apple Pencil": "Apple Pencil Pro",
+      "Magic Keyboard": "Tak",
+      "Bateria": "do 10h",
+      "Kolor": "Space Gray",
+      "Wymiary": "247.6 x 178.5 x 6.1 mm",
+      "Waga": "462g"
+    },
+    "price": 3199.00,
+    "imageUrl": "Images/ipad_air_11.png"
+  },
+  {
+    "id": 31,
+    "title": "Bose QuietComfort 45 Słuchawki Nauszne",
+    "category": [
+      "Audio",
+      "Słuchawki",
+      "Bose"
+    ],
+    "description": [
+      "Typ: Słuchawki nauszne",
+      "ANC: Aktywna redukcja szumów",
+      "Czas pracy: do 24h",
+      "Łączność: Bluetooth 5.1, przewodowa"
+    ],
+    "specification": {
+      "Producent": "Bose",
+      "Typ": "Słuchawki",
+      "Kompatybilność": "Bluetooth",
+      "Model": "QuietComfort 45",
+      "Konstrukcja": "Nauszne zamkniete",
+      "Aktywna redukcja szumow": "Tak",
+      "Lacznosc": "Bluetooth 5.1",
+      "Kodeki": "SBC, AAC",
+      "Zasieg": "9m",
+      "Czas pracy": "24h",
+      "Czas ladowania": "2.5h",
+      "Szybkie ladowanie": "15min = 3h pracy",
+      "Mikrofon": "Wbudowany",
+      "Asystent glosowy": "Tak",
+      "Aplikacja": "Bose Music",
+      "Wejscie audio": "2.5mm",
+      "Kabel w zestawie": "USB-A do USB-C, audio 2.5mm do 3.5mm",
+      "Etui": "Tak",
+      "Kolor": "Czarny",
+      "Waga": "238g"
+    },
+    "price": 1299.00,
+    "imageUrl": "Images/bose_qc45.png"
+  },
+  {
+    "id": 32,
+    "title": "Razer BlackWidow V4 75% Klawiatura Mechaniczna",
+    "category": [
+      "Akcesoria",
+      "Klawiatury",
+      "Razer"
+    ],
+    "description": [
+      "Typ: Klawiatura mechaniczna",
+      "Layout: 75% kompaktowy",
+      "Przełączniki: Razer Orange",
+      "Podświetlenie: Razer Chroma RGB"
+    ],
+    "specification": {
+      "Producent": "Razer",
+      "Typ": "Klawiatura",
+      "Kompatybilność": "PC",
+      "Model": "BlackWidow V4 75%",
+      "Przelaczniki": "Razer Orange Tactile",
+      "Layout": "75% (82 klawisze)",
+      "Lacznosc": "Przewodowa USB-C",
+      "Podswietlenie": "Razer Chroma RGB",
+      "Strefy podswietlenia": "Per-key RGB",
+      "Pokretlo": "Wielofunkcyjne",
+      "Klawisze medialne": "Dedykowane",
+      "Hot-swap": "Nie",
+      "Polling rate": "1000Hz",
+      "Anti-ghosting": "N-Key Rollover",
+      "Pamiec wbudowana": "Tak",
+      "Oprogramowanie": "Razer Synapse 3",
+      "Podkladka pod nadgarstki": "Magnetyczna",
+      "Kabel": "USB-A do USB-C, 1.8m",
+      "Wymiary": "319 x 138 x 42mm",
+      "Waga": "870g"
+    },
+    "price": 649.00,
+    "imageUrl": "Images/razer_blackwidow_v4.png"
+  },
+  {
+    "id": 33,
+    "title": "Corsair K70 RGB PRO Klawiatura Gaming",
+    "category": [
+      "Akcesoria",
+      "Klawiatury",
+      "Corsair"
+    ],
+    "description": [
+      "Typ: Klawiatura mechaniczna",
+      "Przełączniki: Cherry MX Red",
+      "Podświetlenie: RGB per-key",
+      "Konstrukcja: Aluminiowa rama"
+    ],
+    "specification": {
+      "Producent": "Corsair",
+      "Typ": "Klawiatura",
+      "Kompatybilność": "PC",
+      "Model": "K70 RGB PRO",
+      "Przelaczniki": "Cherry MX Red",
+      "Layout": "Full-size (104 klawisze)",
+      "Lacznosc": "Przewodowa USB",
+      "Podswietlenie": "RGB per-key",
+      "Oprogramowanie": "iCUE",
+      "Rama": "Aluminium szczotkowane",
+      "Klawisze medialne": "Dedykowane",
+      "Pokretlo glosnosci": "Tak",
+      "USB Passthrough": "Tak",
+      "Polling rate": "1000Hz",
+      "Anti-ghosting": "100% N-Key Rollover",
+      "Podkladka pod nadgarstki": "Magnetyczna z pamięci kształtu",
+      "Kabel": "USB, pleciony, 1.8m",
+      "Wymiary": "440 x 166 x 38mm",
+      "Waga": "1.2kg"
+    },
+    "price": 799.00,
+    "imageUrl": "Images/corsair_k70_rgb.png"
+  },
+  {
+    "id": 34,
+    "title": "SteelSeries Rival 650 Wireless Gaming Mouse",
+    "category": [
+      "Akcesoria",
+      "Myszki",
+      "SteelSeries"
+    ],
+    "description": [
+      "Typ: Mysz bezprzewodowa",
+      "Sensor: TrueMove3+ 12000 CPI",
+      "Przyciski: 7 programowalnych",
+      "Czas pracy: do 24h"
+    ],
+    "specification": {
+      "Producent": "SteelSeries",
+      "Typ": "Mysz",
+      "Kompatybilność": "PC",
+      "Model": "Rival 650 Wireless",
+      "Lacznosc": "2.4GHz bezprzewodowa, Bluetooth",
+      "Sensor": "TrueMove3+ 12000 CPI",
+      "Rozdzielczosc": "12000 CPI",
+      "Przyspieszenie": "50G",
+      "Predkosc": "350 IPS",
+      "Polling rate": "1000Hz",
+      "Liczba przyciskow": "7",
+      "Czas reakcji": "1ms",
+      "Bateria": "Wbudowana litowo-jonowa",
+      "Czas pracy": "24h",
+      "Szybkie ladowanie": "15min = 10h",
+      "Podswietlenie": "RGB 3-strefowe",
+      "Regulacja ciezaru": "Tak",
+      "Oprogramowanie": "SteelSeries Engine",
+      "Wymiary": "131 x 62 x 42mm",
+      "Waga": "121g (bez ciezarkow)"
+    },
+    "price": 549.00,
+    "imageUrl": "Images/steelseries_rival_650.png"
+  },
+  {
+    "id": 35,
+    "title": "Logitech MX Master 3S Mysz Produktywność",
+    "category": [
+      "Akcesoria",
+      "Myszki",
+      "Logitech"
+    ],
+    "description": [
+      "Typ: Mysz bezprzewodowa",
+      "Sensor: Darkfield 8000 DPI",
+      "Przyciski: 7 programowalnych",
+      "Kompatybilność: Multi-device"
+    ],
+    "specification": {
+      "Producent": "Logitech",
+      "Typ": "Mysz",
+      "Kompatybilność": "PC",
+      "Model": "MX Master 3S",
+      "Lacznosc": "Bluetooth, USB-C",
+      "Sensor": "Darkfield High Precision",
+      "Rozdzielczosc": "8000 DPI",
+      "Regulacja DPI": "200-8000 DPI",
+      "Liczba przyciskow": "7",
+      "Rolka przewijania": "MagSpeed elektromagnetyczna",
+      "Rolka boczna": "Tak",
+      "Multi-device": "3 urzadzenia",
+      "Bateria": "500mAh",
+      "Czas pracy": "70 dni",
+      "Szybkie ladowanie": "3min = caly dzien",
+      "Ladowanie": "USB-C",
+      "Oprogramowanie": "Logi Options+",
+      "Flow": "Tak",
+      "Ergonomia": "Praworeczna",
+      "Wymiary": "124.9 x 84.3 x 51mm",
+      "Waga": "141g",
+      "Kolor": "Grafitowy"
+    },
+    "price": 449.00,
+    "imageUrl": "Images/logitech_mx_master_3s.png"
   }
 
 ]

@@ -11,18 +11,29 @@
 			</button>
 
 			<div class="rollout-panel @(ActiveCategory == category ? "expanded" : "")">
-				@foreach(var group in GetSubcategoryGroups(category))
+				@{
+					var groups = GetSubcategoryGroups(category);
+					bool isFirst = true;
+				}
+
+				@foreach (var group in groups)
 				{
 					<div class="subcategory-group">
 						<h5>@group.Key</h5>
 						<ul>
-							@foreach(var item in group.Value)
+							@if (isFirst)
 							{
-								<li @onclick="() => SelectSubCategory(category,item)">@item</li>
+								<li class="see-all" @onclick="() => NavigateToCategory(category)">Zobacz wszystko</li>
+								isFirst = false;
+							}
+							@foreach (var item in group.Value)
+							{
+								<li @onclick="() => SelectSubCategory(category, item)">@item</li>
 							}
 						</ul>
 					</div>
 				}
+
 			</div>
 		</div>
 		
@@ -48,7 +59,6 @@
 	public string ImageUrl = "Images/SvgIcons/right-arrow.svg";
 
 	private string ActiveCategory = string.Empty;
-
 	private void ToggleCategory(string category)
 	{
 		ActiveCategory = ActiveCategory == category ? string.Empty : category;
@@ -58,6 +68,12 @@
 	{
 		ActiveCategory = string.Empty;
 		Navigation.NavigateTo($"/category/{mainCategory}/{subcategory}");
+	}
+
+	private void NavigateToCategory(string category)
+	{
+		ActiveCategory = string.Empty;
+		Navigation.NavigateTo($"/category/{category}/{category}");
 	}
 
 	private Dictionary<string, List<string>> GetSubcategoryGroups(string category)

@@ -6,12 +6,16 @@
 
 <div class="page-container">
 	<div class="main">
-		<div class="product-images">
-			@foreach(var image in productCardInfo.images)
-			{
-				<img src="@image" class="product-image" alt="Product Image" @onclick="() => setCurrentImage(image)" />
-			}
-		</div>
+		@if (productCardInfo.images.Count > 0)
+		{
+			<div class="product-images">
+
+				@foreach (var image in productCardInfo.images)
+				{
+					<img src="@image" class="product-image" alt="Product Image" @onclick="() => setCurrentImage(image)" />
+				}
+			</div>
+		}
 		<div class="chosen-image">
 			<img src="@productImageUrl" />
 		</div>
