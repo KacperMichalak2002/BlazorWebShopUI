@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="8" height="8" viewBox="0 0 8 8">
+  <defs>
+    <polygon id="dropdown_8-a" points="0 3 4 7 8 3"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <use fill="var(--color-neutral700, #444444)" xlink:href="#dropdown_8-a"/>
+  </g>
+</svg>
